@@ -1,0 +1,20 @@
+uuid: 86be9c80-343f-4f6c-8d5b-cbe2fd5747a0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - react_block
+id: node.field_react_block
+field_name: field_react_block
+entity_type: node
+type: react_block
+settings: {  }
+module: react_block
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
+

@@ -1,0 +1,21 @@
+{
+  "title": "Blocky Cool Shoes",
+  "price": 45.00,
+  "sku": "1337049",
+  "category": [
+    "men"
+  ],
+  "color": "blue",
+  "size": "42",
+  "description": "<p>The latest and coolest shoes for those people looking to make a statement. Made of space age fabrics combined with a solid, chunky sole means you will stand tall in the crowd.</p><ul><li>If you know, you know</li> <li>Lace-up fastening </li> <li>Branded tongue and cuff</li> <li>Padded for comfort</li> <li>Chunky sole</li> <li>Moulded tread</li></ul>",
+  "colors": [
+    "blue"
+  ],
+  "sizes": [
+    "45"
+  ],
+  "inventory": 12,
+  "images": [
+    "https://via.placeholder.com/300x400/ffff99/333333/?text=Chunky+Cool+Shoes"
+  ]
+}

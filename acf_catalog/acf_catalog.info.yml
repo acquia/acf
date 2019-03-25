@@ -1,0 +1,8 @@
+name: 'ACF Catalog'
+type: module
+description: 'Catalog service for ACF'
+core: 8.x
+package: 'Acquia Commerce Framework'
+dependencies:
+ - basic_data
+ - connection

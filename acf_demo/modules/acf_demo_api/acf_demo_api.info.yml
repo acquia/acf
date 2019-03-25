@@ -1,0 +1,9 @@
+name: 'ACF Demo API'
+type: module
+description: Provides the mock API and ACF Catalog plugin.
+package: 'Acquia Commerce Framework'
+core: 8.x
+hidden: true
+dependencies:
+  - simple_api
+  - acf_catalog

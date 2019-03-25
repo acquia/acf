@@ -1,0 +1,3 @@
+- create non webpack versions
+- move CSS from demo theme to components
+-- they should be cleaner and look better in any theme

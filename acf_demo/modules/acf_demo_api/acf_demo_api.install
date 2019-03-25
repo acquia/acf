@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Contains ac_demo_api.install.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function acf_demo_api_install() {
+  // Move the Simple API data to the public file system for the mock API
+  $source = drupal_get_path('module', 'acf_demo_api') . '/data';
+  $files = file_scan_directory($source, '/.*\.(json)$/');
+  $path = 'public://acf_demo/';
+  if (file_prepare_directory($path, FILE_CREATE_DIRECTORY)) {
+    foreach ($files as $file) {
+      $result = file_unmanaged_copy($file->uri, $path, FILE_EXISTS_REPLACE);
+      if (!$result) {
+        throw new Exception("Unable to copy {$file->uri} to $path.");
+      }
+    }
+  } else {
+    throw new Exception("Unable to create $path folder.");
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function acf_demo_api_uninstall() {
+  // Remove installed acf_demo_api configuration
+  $config_path = drupal_get_path('module', 'acf_demo_api') . '/config/install';
+  $files = file_scan_directory($config_path, '/.*\.yml$/');
+  $configs = array_map(function ($file) {
+    return $file->name;
+  }, $files);
+  $config_factory = \Drupal::configFactory();
+  foreach ($configs as $config_path => $config_name) {
+    $config_factory->getEditable($config_name)->delete();
+  }
+  
+  //Remove the mock API data
+  $path = 'public://acf_demo/';
+  file_unmanaged_delete_recursive($path, NULL);
+}

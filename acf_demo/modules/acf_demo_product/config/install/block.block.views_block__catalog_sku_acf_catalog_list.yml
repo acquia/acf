@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.catalog_sku
+  module:
+    - system
+    - views
+id: views_block__catalog_sku_acf_catalog_list
+theme:  seven
+region: content
+weight: 100
+provider: null
+plugin: 'views_block:catalog_sku-acf_catalog_list'
+settings:
+  id: 'views_block:catalog_sku-acf_catalog_list'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/admin/structure/catalog/*'
+    negate: false
+    context_mapping: {  }
+

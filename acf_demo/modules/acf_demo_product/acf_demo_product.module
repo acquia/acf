@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * ACF Demo hooks
+ */
+
+/**
+ * Implements hook_theme().
+ * 
+ * Lets tell Drupal about the templates and template overrides we have 
+ * available for the demo.
+ */
+function acf_demo_product_theme() {
+  return [
+    // Overrides
+    'node__product' => array(
+      'base hook' => 'node',
+    ),
+    'node__product__teaser' => array(
+      'base hook' => 'node',
+    )
+  ];
+}
+
+/**
+ * Implements hook_preprocess_node().
+ * 
+ * Make product data on the product page available to JS for React.
+ */
+function acf_demo_product_preprocess_node__product(&$variables) {
+  $node = $variables['node'];
+
+  // @TODO: Modify this to pass the sku basic_data JSON in addition
+  $variables['#attached']['drupalSettings']['acf_blocks']['product'] = [
+    'nid' => $node->nid->value,
+    'sku' => $node->field_product_sku->value,
+    'id' => $node->uuid->value,
+  ];
+}

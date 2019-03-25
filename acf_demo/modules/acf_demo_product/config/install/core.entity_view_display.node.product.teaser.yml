@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.product.body
+    - field.field.node.product.field_product_category
+    - field.field.node.product.field_product_color
+    - field.field.node.product.field_product_images
+    - field.field.node.product.field_product_price
+    - field.field.node.product.field_product_size
+    - field.field.node.product.field_product_sku
+    - field.field.node.product.field_react_block
+    - field.field.node.product.field_sku_data
+    - node.type.product
+  module:
+    - image
+    - react_block
+    - user
+_core:
+  default_config_hash: iK0s2qELi5DV5EJEwxWKHrTj991n4nCvqAcOXW-z2Ws
+id: node.product.teaser
+targetEntityType: node
+bundle: product
+mode: teaser
+content:
+  field_product_images:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  field_product_price:
+    type: number_decimal
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_react_block:
+    type: react_block_formatter
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_product_category: true
+  field_product_color: true
+  field_product_size: true
+  field_product_sku: true
+  field_sku_data: true
+  links: true

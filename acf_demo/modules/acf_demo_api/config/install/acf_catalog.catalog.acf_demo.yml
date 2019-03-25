@@ -1,0 +1,32 @@
+id: acf_demo
+label: 'Simple API Products'
+connection: acf_demo_api_simple_products
+entities:
+  node:
+    product:
+      key: field_sku_data
+      data:
+        title:
+          value: title
+          type: string
+        body:
+          value: description
+          type: rich_text
+        field_product_sku:
+          value: sku
+          type: string
+        field_product_size:
+          value: size
+          type: string
+        field_product_price:
+          value: price
+          type: string
+        field_product_color:
+          value: color
+          type: string
+        field_product_images:
+          value: images
+          type: image
+        field_product_category:
+          value: category
+          type: term

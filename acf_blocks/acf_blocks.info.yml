@@ -1,0 +1,7 @@
+name: 'ACF Blocks'
+type: module
+description: 'Decoupled ACF blocks.'
+package: 'Acquia Commerce Framework'
+dependencies:
+  - react_block
+core: '8.x'

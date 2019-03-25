@@ -1,0 +1,24 @@
+{
+  "title": "Basketball Shoes",
+  "price": 62.00,
+  "sku": "1307090",
+  "category": [
+    "men"
+  ],
+  "color": "black",
+  "size": "42",
+  "description": "<p>Providing high level performance with advanced ankle support, these are the shoes you want for your feet. Full cushioning interiors feel ike walking on a cloud, while the resilient exterior is not afraid of whatever challenges you meet.</p><ul><li>Nothing beats a fresh pair of high tops</li> <li>Lace-up fastening</li> <li>Fancy type trim</li> <li>Sock-like cuff</li><li>Ultra-responsive cloud cushioning</li> <li>Proprietary term for a common feature</li> <li>It adds stability while allowing the foot to flex naturally</li> <li>Grippy rubber outsole</li></ul>",
+  "colors": [
+    "black",
+    "white"
+  ],
+  "sizes": [
+    "41",
+    "42",
+    "43"
+  ],
+  "inventory": 9,
+  "images": [
+    "https://via.placeholder.com/300x400/0077cc/333333/?text=High+Top+Shoes"
+  ]
+}

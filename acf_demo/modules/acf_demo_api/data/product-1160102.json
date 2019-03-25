@@ -1,0 +1,28 @@
+{
+  "title": "Thin Sole Shoes",
+  "price": 40,
+  "sku": "1160102",
+  "category": [
+    "women",
+    "men"
+  ],
+  "color": "blue",
+  "size": "UK 8.5 - EU 42.5 - US 9.5",
+  "description": "<p>When you want to feel the earth beneath you, grab some thin sole shoes. These will help your sports performance by mimicking your natural movements</p><ul><li>Minimal rise</li> <li>Subtle design and colors</li> <li>Designed to improve performance by 50%</li> <li>Light enough to run on water</li> <li>Minimal branding</li> <li>Not a ninja</li> <li>... but I play one in my backyard</li> <li>Wide toe box</li></ul>",
+  "colors": [
+    "Beige",
+    "Black",
+    "Blue",
+    "Natural"
+  ],
+  "sizes": [
+    "UK 6.5 - EU 40 - US 7.5",
+    "UK 8.5 - EU 42.5 - US 9.5",
+    "UK 12 - EU 47 - US 13"
+  ],
+  "inventory": 12,
+  "images": [
+    "https://via.placeholder.com/300x400/003333/cccccc/?text=Thin+Sole+Shoes",
+    "https://via.placeholder.com/300x400/004455/cccccc/?text=Thin+Sole+Shoes+2"
+  ]
+}

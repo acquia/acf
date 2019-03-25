@@ -1,0 +1,108 @@
+uuid: d29ea51e-c7d3-49ba-99c6-5b9788343678
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.node.product.body
+    - field.field.node.product.field_product_category
+    - field.field.node.product.field_product_color
+    - field.field.node.product.field_product_images
+    - field.field.node.product.field_product_price
+    - field.field.node.product.field_product_size
+    - field.field.node.product.field_product_sku
+    - field.field.node.product.field_react_block
+    - node.type.product
+  module:
+    - entity_browser
+    - react_block
+    - text
+id: node.product.default
+targetEntityType: node
+bundle: product
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 1
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_product_category:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_product_color:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_product_images:
+    type: entity_browser_file
+    weight: 4
+    settings:
+      entity_browser: image_browser
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      preview_image_style: thumbnail
+      field_widget_edit: true
+      view_mode: default
+      field_widget_replace: false
+    region: content
+    third_party_settings: {  }
+  field_product_price:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_product_size:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_product_sku:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_react_block:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: react_block_options
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 8
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true
+

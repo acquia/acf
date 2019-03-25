@@ -1,0 +1,6 @@
+- Grid view on taxonomy listing page
+- better/more sample data
+- make basic_data read only
+- hide imported product data fields by default
+- create additional product fields outside of import
+- move some basic css to components (currently in theme)

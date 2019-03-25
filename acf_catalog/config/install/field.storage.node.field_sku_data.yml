@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_data
+    - node
+id: node.field_sku_data
+field_name: field_sku_data
+entity_type: node
+type: entity_reference
+settings:
+  target_type: basic_data
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
+

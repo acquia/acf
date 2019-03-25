@@ -1,0 +1,11 @@
+name: Mini cart
+machine_name: acf_blocks_mini_cart
+type: pdb
+description: 'Mini cart block'
+core: '8.x'
+package: ACF
+module_status: active
+presentation: react-block
+add_js:
+  footer:
+    'mini_cart.bundle.js': {}

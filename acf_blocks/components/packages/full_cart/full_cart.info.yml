@@ -1,0 +1,11 @@
+name: Full cart
+machine_name: acf_blocks_full_cart
+type: pdb
+description: 'Full cart block'
+core: '8.x'
+package: ACF
+module_status: active
+presentation: react-block
+add_js:
+  footer:
+    'full_cart.bundle.js': {}

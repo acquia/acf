@@ -1,0 +1,11 @@
+name: Add to cart
+machine_name: acf_blocks_add_to_cart
+type: pdb
+description: 'Add to cart block'
+core: '8.x'
+package: ACF
+module_status: active
+presentation: react-block
+add_js:
+  footer:
+    'add_to_cart.bundle.js': {}

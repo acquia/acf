@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - basic_data.basic_data_type.sku
+    - field.storage.basic_data.field_catalog
+id: basic_data.sku.field_catalog
+field_name: field_catalog
+entity_type: basic_data
+bundle: sku
+label: Catalog
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:catalog'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference
+

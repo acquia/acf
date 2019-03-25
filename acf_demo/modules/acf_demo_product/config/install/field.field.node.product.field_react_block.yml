@@ -1,0 +1,24 @@
+uuid: 811e52b7-a792-461e-a978-aa3d4122ee84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_react_block
+    - node.type.product
+  module:
+    - react_block
+id: node.product.field_react_block
+field_name: field_react_block
+entity_type: node
+bundle: product
+label: 'React block'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: add_to_cart
+default_value_callback: ''
+settings: {  }
+field_type: react_block
+

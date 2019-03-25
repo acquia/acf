@@ -1,0 +1,159 @@
+[
+  {
+    "title": "Advanced Golf Shoes",
+    "price": 80.00,
+    "sku": "1323210",
+    "category": [
+      "men"
+    ],
+    "color": "grey",
+    "size": "42",
+    "description": "<p>Lightweight comfort meets professional performance in the Advanced Golf Shoes. Crafted with a super modern insole, these shoes provide advanced cushioning and support. These shoes are water resistant and durable, while the sleek design adds extra walking comfort.</p><ul><li>Not just your average golf shoes</li> <li>Designed to provide lateral stability on every swing</li> <li>Foam insole for responsive cushioning</li> <li>Padded cuff for a comfortable fit</li> <li>Lace-up fastening</li> <li>Heel pull tab </li> <li>Makes getting them on a little easier </li> <li>Exaggerated rubber outsole for enhanced grip on wet surfaces</li> <li>Wide-fit design</li></ul>",
+    "colors": [
+      "grey",
+      "black",
+      "blue"
+    ],
+    "sizes": [
+      "42",
+      "43",
+      "44"
+    ],
+    "inventory": 5,
+    "images": [
+      "https://via.placeholder.com/300x400/00cc66/333333/?text=Advanced+Golf+Shoes"
+    ]
+  },
+  {
+    "title": "Blocky Cool Shoes",
+    "price": 45.00,
+    "sku": "1337049",
+    "category": [
+      "men"
+    ],
+    "color": "blue",
+    "size": "42",
+    "description": "<p>The latest and coolest shoes for those people looking to make a statement. Made of space age fabrics combined with a solid, chunky sole means you will stand tall in the crowd.</p><ul><li>If you know, you know</li> <li>Lace-up fastening </li> <li>Branded tongue and cuff</li> <li>Padded for comfort</li> <li>Chunky sole</li> <li>Moulded tread</li></ul>",
+    "colors": [
+      "blue"
+    ],
+    "sizes": [
+      "45"
+    ],
+    "inventory": 12,
+    "images": [
+      "https://via.placeholder.com/300x400/ffff99/333333/?text=Chunky+Cool+Shoes"
+    ]
+  },
+  {
+    "title": "Basketball Shoes",
+    "price": 62.00,
+    "sku": "1307090",
+    "category": ["men"],
+    "color": "black",
+    "size": "42",
+    "description": "<p>Providing high level performance with advanced ankle support, these are the shoes you want for your feet. Full cushioning interiors feel ike walking on a cloud, while the resilient exterior is not afraid of whatever challenges you meet.</p><ul><li>Nothing beats a fresh pair of high tops</li> <li>Lace-up fastening</li> <li>Fancy type trim</li> <li>Sock-like cuff</li><li>Ultra-responsive cloud cushioning</li> <li>Proprietary term for a common feature</li> <li>It adds stability while allowing the foot to flex naturally</li> <li>Grippy rubber outsole</li></ul>",
+    "colors": [
+      "black",
+      "white"
+    ],
+    "sizes": [
+      "41",
+      "42",
+      "43"
+    ],
+    "inventory": 9,
+    "images": [
+      "https://via.placeholder.com/300x400/0077cc/333333/?text=High+Top+Shoes"
+    ]
+  },
+  {
+    "title": "Advanced Tennis Shoes",
+    "price": 80.00,
+    "sku": "1323456",
+    "category": ["women"],
+    "color": "White",
+    "size": "42",
+    "description": "<p>Lightweight comfort meets professional performance in the Advanced Tennis Shoes. Crafted with a super modern insole, these shoes provide advanced cushioning and support. These shoes are water resistant and durable, while the sleek design adds extra walking comfort.</p><ul><li>Not just your average tennis shoes</li> <li>Designed to provide lateral stability on every swing</li> <li>Foam insole for responsive cushioning</li> <li>Padded cuff for a comfortable fit</li> <li>Lace-up fastening</li> <li>Heel pull tab </li> <li>Makes getting them on a little easier </li> <li>Exaggerated rubber outsole for enhanced grip on wet surfaces</li> <li>Wide-fit design</li></ul>",
+    "colors": [
+      "Tan"
+    ],
+    "sizes": [
+      "UK 6",
+      "UK 9"
+    ],
+    "inventory": 18,
+    "images": [
+      "https://via.placeholder.com/300x400/eeeeee/333333/?text=Advanced+Tennis+Shoes"
+    ]
+  },
+  {
+    "title": "Chunky Cool Shoes",
+    "price": 45.00,
+    "sku": "1337943",
+    "category": ["women"],
+    "color": "red",
+    "size": "42",
+    "description": "<p>The latest and coolest shoes for those people looking to make a statement. Made of space age fabrics combined with a solid, chunky sole means you will stand tall in the crowd.</p><ul><li>If you know, you know</li> <li>Lace-up fastening </li> <li>Branded tongue and cuff</li> <li>Padded for comfort</li> <li>Chunky sole</li> <li>Moulded tread</li></ul>",
+    "colors": [
+      "Black",
+      "Neon",
+      "White",
+      "Red"
+    ],
+    "sizes": [
+      "UK 11",
+      "UK 12",
+      "UK 13"
+    ],
+    "inventory": 11,
+    "images": [
+      "https://via.placeholder.com/300x400/cc0011/000000/?text=Chunky+Cool+Shoes"
+    ]
+  },
+  {
+    "title": "High Top Shoes",
+    "price": 62.00,
+    "sku": "1307993",
+    "category": ["women"],
+    "color": "black",
+    "size": "42",
+    "description": "<p>Providing high level performance with advanced ankle support, these are the shoes you want for your feet. Full cushioning interiors feel ike walking on a cloud, while the resilient exterior is not afraid of whatever challenges you meet.</p><ul><li>Nothing beats a fresh pair of high tops</li> <li>Lace-up fastening</li> <li>Fancy type trim</li> <li>Sock-like cuff</li><li>Ultra-responsive cloud cushioning</li> <li>Proprietary term for a common feature</li> <li>It adds stability while allowing the foot to flex naturally</li> <li>Grippy rubber outsole</li></ul>",
+    "colors": [
+      "White",
+      "Beige"
+    ],
+    "sizes": [
+      "UK 6.5 - EU 40 - US 7.5",
+      "UK 12 - EU 47 - US 13"
+    ],
+    "inventory": 3,
+    "images": [
+      "https://via.placeholder.com/300x400/000000/ffffff/?text=High+Top+Shoes"
+    ]
+  },
+  {
+    "title": "Thin Sole Shoes",
+    "price": 40,
+    "sku": "1160102",
+    "category": ["women", "men"],
+    "color": "blue",
+    "size": "UK 8.5 - EU 42.5 - US 9.5",
+    "description": "<p>When you want to feel the earth beneath you, grab some thin sole shoes. These will help your sports performance by mimicking your natural movements</p><ul><li>Minimal rise</li> <li>Subtle design and colors</li> <li>Designed to improve performance by 50%</li> <li>Light enough to run on water</li> <li>Minimal branding</li> <li>Not a ninja</li> <li>... but I play one in my backyard</li> <li>Wide toe box</li></ul>",
+    "colors": [
+      "Beige",
+      "Black",
+      "Blue",
+      "Natural"
+    ],
+    "sizes": [
+      "UK 6.5 - EU 40 - US 7.5",
+      "UK 8.5 - EU 42.5 - US 9.5",
+      "UK 12 - EU 47 - US 13"
+    ],
+    "inventory": 12,
+    "images": [
+      "https://via.placeholder.com/300x400/003333/cccccc/?text=Thin+Sole+Shoes", "https://via.placeholder.com/300x400/004455/cccccc/?text=Thin+Sole+Shoes+2"
+    ]
+  }
+]
