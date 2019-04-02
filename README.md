@@ -37,7 +37,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 * **Andrei Perciun** - *ACF Blocks, ACF Demo* - [andreiperciun](https://github.com/andreiperciun)
 * **Alexei Seremet** - *ACF Blocks* - [alexeiseremet](https://github.com/alexeiseremet)
 
-See also the list of [contributors](https://github.com/acquia/acf/docs/6_Contributors.md) who participated in this project.
+See also the list of [contributors](https://github.com/acquia/acf/blob/master/docs/6_Contributors.md) who participated in this project.
 
 ## License
 
