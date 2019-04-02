@@ -9,6 +9,9 @@ Contexual commerce experiences require  multiple modes of integration with the C
 
 ACF is an open-source reference architecture that allows Drupal developers, Javascript developers, and site builders to create these experiences quickly.
 
+# Demo video
+[![](http://img.youtube.com/vi/OWGu1FSzWLU/0.jpg)](http://www.youtube.com/watch?v=OWGu1FSzWLU "Acquia Commerce Framework Demo")
+
 ## Module Listing
 - acf_blocks - Decoupled blocks for direct user iteraction with ecommerce APIs
 - acf_catalog - Back end integration tool for importing "virtual catalogs" from ecommerce APIs
