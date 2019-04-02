@@ -2,7 +2,7 @@
   "private": true,
   "name": "acf-packages",
   "description": "Provides decoupled React components for use with ACF",
-  "repository": "github:acquia/acf"
+  "repository": "github:acquia/acf",
   "version": "1.0.0",
   "engines": {
     "node": ">=8.12.0"
