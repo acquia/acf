@@ -6,3 +6,4 @@ package: 'Acquia Commerce Framework'
 hidden: true
 dependencies:
   - acf_demo_api
+  - pathauto

@@ -1,9 +1,7 @@
-uuid: d29ea51e-c7d3-49ba-99c6-5b9788343678
 langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.image_browser
     - field.field.node.product.body
     - field.field.node.product.field_product_category
     - field.field.node.product.field_product_color
@@ -12,9 +10,11 @@ dependencies:
     - field.field.node.product.field_product_size
     - field.field.node.product.field_product_sku
     - field.field.node.product.field_react_block
+    - field.field.node.product.field_sku_data
+    - image.style.thumbnail
     - node.type.product
   module:
-    - entity_browser
+    - image
     - react_block
     - text
 id: node.product.default
@@ -44,17 +44,11 @@ content:
     type: options_select
     region: content
   field_product_images:
-    type: entity_browser_file
+    type: image_image
     weight: 4
     settings:
-      entity_browser: image_browser
-      field_widget_remove: true
-      open: true
-      selection_mode: selection_append
       preview_image_style: thumbnail
-      field_widget_edit: true
-      view_mode: default
-      field_widget_replace: false
+      progress_indicator: throbber
     region: content
     third_party_settings: {  }
   field_product_price:
@@ -101,8 +95,8 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_sku_data: true
   path: true
   promote: true
   sticky: true
   uid: true
-
