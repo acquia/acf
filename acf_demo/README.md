@@ -20,8 +20,7 @@ Simple API Products - This catalog uses a connection that is local. It is lookin
 
 You can select the `'Import'` action under the operations for either catalog. Confirm `'Yes, Run The Import'` and wait for the batch process.
 
-## Demo Overview Videos
- COMING SOON!
-
 ## Demo theme
+You don't need this theme, but it will make the demo a bit prettier and more fun.
+
 https://github.com/acquia/acf-demo-theme
