@@ -20,7 +20,7 @@ EP React Blocks provides block wrappers for writing progressively-decoupled Reac
 These modules provide the funcionality and examples for integrating Drupal with the BigCommerce platform.
 - Coming soon!
 
-##Salesforce Commerce Cloud
+## Salesforce Commerce Cloud
 > "[Salesforce Commerce Cloud](https://www.salesforce.com/products/commerce-cloud/overview "Salesforce Commerce Cloud") empowers you to create seamless ecommerce experiences that inspire and convert today's connected shoppers. "
 
 These modules provide the funcionality and examples for integrating Drupal with the Commerce Cloud platform.
