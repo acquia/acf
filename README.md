@@ -24,7 +24,7 @@ ACF is an open-source reference architecture that allows Drupal developers, Java
 No defined roadmap at this time. See the [TODO.md](TODO.md) docs in the module folders for a list of ideas and thoughts. Feel free to contribute back!
 
 ## Support
-This project is a reference architecture similar to the `examples` module. It is not intended to be used directly. Use this to inform your architecture, and to experiment with your plans very quickly. See the partner connectors *(coming soon - Elastic Path, Big Commerce, Commerce Cloud)* for more specific examples of how best to connect to your ecommerce engine.
+This project is a reference architecture similar to the `examples` module. It is not intended to be used directly. Use this to inform your architecture, and to experiment with your plans very quickly. See the [external connectors document](docs/7_External_connectors.md) for more specific examples of how best to connect to your ecommerce engine.
 
 This code is provided as-is with no warranty. This is a community reference project! We hope this provides value to everyone, but this is **not an official Acquia product**. Please feel free to share and contribute back.
 
