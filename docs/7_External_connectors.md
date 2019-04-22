@@ -9,7 +9,7 @@ These modules provide the funcionality and examples for integrating Drupal with 
 This module provides services and content types for managing a catalog from ElasticPath Commerce. Using this module, you can import a store's catalog from ElasticPath and map the catalog to Drupal content nodes, while preserving the catalog structure. This module also provides services to for working with and manipulating the catalog in Drupal code.
 - **[EP Reference Components](https://www.drupal.org/project/ep_reference_components "EP Reference Components")**
 This module provides a kit of React components as Drupal blocks for building storefronts connected to ElasticPath Commerce. The components come from the ElasticPath Reference Storefront and are made available using the EP React Blocks module.
-- **[EP React Blocks](https://www.drupal.org/project/ep_react_block "EP React Blocks")&#42; **
+- **[EP React Blocks](https://www.drupal.org/project/ep_react_block "EP React Blocks")** &#42;
 EP React Blocks provides block wrappers for writing progressively-decoupled React blocks in Drupal. It aims to provide a good developer and business-user experience and maximize the flexibility offered by a progressively-decoupled approach. Its most notable features are: Exposes Drupal content data to react blocks through simple YAML configuration, no PHP required Allows block developers to define block configuration forms though simple configuration
 
 &#42; *The EP team is working with the community to push some of their improvements back into the PDB module!*
