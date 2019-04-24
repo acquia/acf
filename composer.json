@@ -1,7 +1,7 @@
 {
     "name": "acquia/acf",
     "description": "a lightweight framework for headless e-commerce with Drupal. Starter connectors for major e-commerce engines",
-    "type": "project",
+    "type": "drupal-module",
     "license": "GPL-2.0-or-later",
     "authors": [
         {
