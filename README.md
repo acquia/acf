@@ -24,7 +24,7 @@ ACF is an open-source reference architecture that allows Drupal developers, Java
 No defined roadmap at this time. See the [TODO.md](TODO.md) docs in the module folders for a list of ideas and thoughts. Feel free to contribute back!
 
 ## Support
-This project is a reference architecture similar to the `examples` module. It is not intended to be used directly. Use this to inform your architecture, and to experiment with your plans very quickly. See the partner connectors *(coming soon - Elastic Path, Big Commerce, Commerce Cloud)* for more specific examples of how best to connect to your ecommerce engine.
+This project is a reference architecture similar to the `examples` module. It is not intended to be used directly. Use this to inform your architecture, and to experiment with your plans very quickly. See the [external connectors document](docs/7_External_connectors.md) for more specific examples of how best to connect to your ecommerce engine.
 
 This code is provided as-is with no warranty. This is a community reference project! We hope this provides value to everyone, but this is **not an official Acquia product**. Please feel free to share and contribute back.
 
@@ -32,16 +32,14 @@ This code is provided as-is with no warranty. This is a community reference proj
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Authors
-
-* **Brant Wynn** - *ACF Catalog, ACF Demo* - [brantwynn](https://github.com/brantwynn)
-* **Ron Northcutt** - *ACF Demo* - [rlnorthcutt](https://github.com/brantwynn)
-* **Liliana Zbirciog** - *Project management* 
-* **Andrei Perciun** - *ACF Blocks, ACF Demo* - [andreiperciun](https://github.com/andreiperciun)
-* **Alexei Seremet** - *ACF Blocks* - [alexeiseremet](https://github.com/alexeiseremet)
-
 See also the list of [contributors](https://github.com/acquia/acf/blob/master/docs/6_Contributors.md) who participated in this project.
 
-## License
+## Copyright and license
 
-This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details
+Copyright © 2019 Acquia Inc.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.

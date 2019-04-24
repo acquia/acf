@@ -35,11 +35,12 @@
     "webpack": "4.28.0",
     "webpack-cli": "3.1.2"
   },
-  "maintainer": "Ron Northcutt",
-  "contributors": [
-    "Ron Northcutt", 
-    "Andrei Perciun", 
-    "Alexei Seremet"
-  ],
-  "license": "MIT"
+  "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Acquia Engineering",
+            "homepage": "https://www.acquia.com",
+            "role": "Maintainer"
+        }
+    ]
 }
