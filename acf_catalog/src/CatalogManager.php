@@ -165,12 +165,24 @@ class CatalogManager implements CatalogManagerInterface {
    */
   public static function addFieldImages($entity, $field, array $images) {
     $files = [];
+    $public = 'public://';
     foreach ($images as $image_url) {
-      // Create file object from remote URL.
-      $image = file_get_contents($image_url);
+      // Process urls and create new files accordingly.
+      if (filter_var($image_url, FILTER_VALIDATE_URL)) {
         $basename = strtok(basename($image_url), '?');
-        $filename = 'public://' . $basename;
+        $filename = $public . $basename;
+        $image = file_get_contents($image_url);
         $file = file_save_data($image, $filename, FILE_EXISTS_REPLACE);
+      }
+      // Otherwise assume the file is already in place.
+      else {
+        $basename = $image_url;
+        $uri = $public . $basename;
+        $results = \Drupal::entityTypeManager()->getStorage('file')
+          ->loadByProperties(['uri' => $uri]);
+        $file = reset($results);
+      }
+      // Create file entity reference for the field.
         $files[] = [
           'target_id' => $file->id(),
           'alt' => $basename,

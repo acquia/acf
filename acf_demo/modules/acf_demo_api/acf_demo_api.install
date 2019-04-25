@@ -11,7 +11,7 @@
 function acf_demo_api_install() {
   // Move the Simple API data to the public file system for the mock API
   $source = drupal_get_path('module', 'acf_demo_api') . '/data';
-  $files = file_scan_directory($source, '/.*\.(json)$/');
+  $files = file_scan_directory($source, '/.*\.(json|jpg|png)$/');
   $path = 'public://acf_demo/';
   if (file_prepare_directory($path, FILE_CREATE_DIRECTORY)) {
     foreach ($files as $file) {
