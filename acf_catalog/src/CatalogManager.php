@@ -157,11 +157,13 @@ class CatalogManager implements CatalogManagerInterface {
   }
 
   /**
-   * @param object $entity
-   * @param string $field
+   * @param $entity
+   * @param $field
    * @param array $images
    *
-   * @return object
+   * @return mixed
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public static function addFieldImages($entity, $field, array $images) {
     $files = [];
@@ -183,11 +185,11 @@ class CatalogManager implements CatalogManagerInterface {
         $file = reset($results);
       }
       // Create file entity reference for the field.
-        $files[] = [
-          'target_id' => $file->id(),
-          'alt' => $basename,
-          'title' => $basename
-        ];
+      $files[] = [
+        'target_id' => $file->id(),
+        'alt' => $basename,
+        'title' => $basename
+      ];
     }
     $entity->set($field, $files);
     return $entity;
