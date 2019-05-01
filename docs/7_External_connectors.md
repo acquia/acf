@@ -18,7 +18,10 @@ EP React Blocks provides block wrappers for writing progressively-decoupled Reac
 > "Our purpose at [BigCommerce](https://www.bigcommerce.com/ "BigCommerce") is to power success for brands. That goes beyond creating the best commerce platform on the market; it means revolutionizing the way people shop, work and live."
 
 These modules provide the funcionality and examples for integrating Drupal with the BigCommerce platform.
-- Coming soon!
+- **[ACF BC](https://github.com/thirdandgrove/acf_bc "ACF BC")**
+acf_bc is a proof-of-concept drupal module providing an Acquia Commerce Framework product data connector for the BigCommerce commerce engine that works alongside the other ACF demo modules.
+- **[BC ACF Blocks](https://github.com/thirdandgrove/bc_acf_blocks "BC ACF Blocks")**
+This provides 4 React blocks to the system. They all use Redux for state management. It is an adaptation of the origin ACF Blocks package from Acquia designed to work with the BigCommerce ACF module. This relies on the react_block module, which in turn is an extension of the pdb module.
 
 ## Salesforce Commerce Cloud
 > "[Salesforce Commerce Cloud](https://www.salesforce.com/products/commerce-cloud/overview "Salesforce Commerce Cloud") empowers you to create seamless ecommerce experiences that inspire and convert today's connected shoppers. "
