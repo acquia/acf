@@ -171,8 +171,10 @@ class CatalogManager implements CatalogManagerInterface {
     foreach ($images as $image_url) {
       // Process urls and create new files accordingly.
       if (filter_var($image_url, FILTER_VALIDATE_URL)) {
-        $basename = strtok(basename($image_url), '?');
-        $filename = $public . $basename;
+        $url_parts = parse_url($image_url);
+        $path_items = explode('/', $url_parts['path']);
+        $file_item = end($path_items); // image.jpg
+        $filename = $public . $file_item; // public://image.jpg
         $image = file_get_contents($image_url);
         $file = file_save_data($image, $filename, FILE_EXISTS_REPLACE);
       }
