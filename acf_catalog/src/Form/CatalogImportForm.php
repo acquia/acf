@@ -69,7 +69,7 @@ class CatalogImportForm extends EntityConfirmFormBase {
         $label = $catalog->label();
         $message = $this->t('Catalog "@label" contains @count data items.',
           ['@label' => $label, '@count' => $count]);
-        drupal_set_message($message);
+        \Drupal::messenger()->addMessage($message);
         batch_set($batch);
       }
     }

@@ -57,15 +57,11 @@ class CatalogForm extends EntityForm {
 
     switch ($status) {
       case SAVED_NEW:
-        drupal_set_message($this->t('Created the %label Catalog.', [
-          '%label' => $catalog->label(),
-        ]));
+        \Drupal::messenger()->addMessage($this->t('Created the %label Catalog.', ['%label' => $catalog->label()]));
         break;
 
       default:
-        drupal_set_message($this->t('Saved the %label Catalog.', [
-          '%label' => $catalog->label(),
-        ]));
+        \Drupal::messenger()->addMessage($this->t('Saved the %label Catalog.', ['%label' => $catalog->label()]));
     }
     $form_state->setRedirectUrl($catalog->toUrl('collection'));
   }
