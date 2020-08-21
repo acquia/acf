@@ -1,9 +1,0 @@
-
-# Catalog menu items definition
-entity.catalog.collection:
-  title: 'ACF Catalogs'
-  route_name: entity.catalog.collection
-  description: 'List ACF Catalog items'
-  parent: system.admin_structure
-  weight: 99
-

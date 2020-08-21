@@ -1,9 +1,0 @@
-name: 'ACF Demo Cart'
-type: module
-description: Cart route, templates and other related functionality.
-package: 'Acquia Commerce Framework'
-core: 8.x
-hidden: true
-dependencies:
-  - acf_blocks
-  - acf_demo_product

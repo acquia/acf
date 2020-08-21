@@ -1,4 +1,0 @@
-services:
-  acf_catalog.manager:
-    class: Drupal\acf_catalog\CatalogManager
-    arguments: []

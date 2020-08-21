@@ -1,9 +1,0 @@
-name: 'ACF Demo Product'
-type: module
-description: 'Provides product content type and category taxonomy.'
-core: 8.x
-package: 'Acquia Commerce Framework'
-hidden: true
-dependencies:
-  - acf_demo_api
-  - pathauto

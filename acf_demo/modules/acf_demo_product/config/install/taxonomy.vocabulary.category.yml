@@ -1,9 +1,0 @@
-uuid: 5ac0b51a-7ad3-45dd-ae43-0988a26b32f7
-langcode: en
-status: true
-name: Category
-vid: category
-description: 'Product category'
-hierarchy: 0
-weight: 0
-

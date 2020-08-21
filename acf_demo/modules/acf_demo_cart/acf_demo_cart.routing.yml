@@ -1,8 +1,0 @@
-acf_demo_cart.cart:
-  path: '/cart'
-  defaults:
-    _controller: '\Drupal\acf_demo_cart\Controller\ShopController::cart'
-    _title: 'Shopping Cart'
-  requirements:
-    # Public route.
-    _access: 'TRUE'

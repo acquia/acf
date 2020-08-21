@@ -1,4 +1,0 @@
-acf_demo_product.category_link:
-  class: Drupal\Core\Menu\MenuLinkDefault
-  deriver: Drupal\acf_demo_product\Plugin\Derivative\CategoryMenuLinkDeriver
-  menu_name: main

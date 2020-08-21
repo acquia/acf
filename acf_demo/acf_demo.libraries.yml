@@ -1,5 +1,0 @@
-acf_demo:
-  version: 1.x
-  css:
-    theme:
-      css/acf_demo.css: {}

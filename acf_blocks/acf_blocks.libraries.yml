@@ -1,6 +1,0 @@
-acf_blocks.vendor:
-  js:
-    components/packages/vendor/vendor.bundle.js: {}
-  dependencies:
-    - core/drupal
-    - core/drupalSettings

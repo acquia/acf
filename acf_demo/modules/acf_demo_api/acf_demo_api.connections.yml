@@ -1,4 +1,0 @@
-acf_demo_api_simple_products:
-  type: 'simple_connection'
-  label: 'ACF Demo - Simple Product Items'
-  endpoint: '/api/simple/acf_demo/'
