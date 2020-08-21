@@ -1,0 +1,14 @@
+# Mini cart
+- button that shows cart content when clicked
+- toggles on/off
+- has button for full cart
+
+### Details
+- Renders the full cart
+- Custom HTML element
+  `<minicart></minicart>`
+- Config: path to icon to use
+- Config: mini cart label
+- Config: path to full cart
+- Config: full cart label
+- Dependency: acf_cart

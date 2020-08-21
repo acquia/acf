@@ -1,0 +1,9 @@
+# Full cart app
+- Designed to be the entire content area.
+
+### Details
+- Renders the full cart
+- Custom HTML element
+  `<fullcart></fullcart>`
+- Config: 
+- Dependency: acf_cart

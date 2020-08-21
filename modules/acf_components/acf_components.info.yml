@@ -1,0 +1,7 @@
+name: ACF Components
+type: module
+description: Adds the components for ACF - Wish, Wishlist, Add to cart, Mini cart, and full cart.
+core_version_requirement: ^8.8 || ^9
+package: Acquia Commerce Framework
+dependencies:
+  - component

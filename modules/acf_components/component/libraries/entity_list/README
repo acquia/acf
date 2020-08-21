@@ -1,0 +1,19 @@
+# Entity list
+- Simple method for managing a list of entities in local storage
+provides a List object to manage a list of entities
+
+### Details
+- Cache API stores based on request (path)
+- entity_cache passes an ID with optional config
+`let list = new entityList(listName)`
+- Parameters
+-- listName : name of the local storage bin to use
+- Methods
+-- list.addToList(id, data) : data is optional array
+-- list.removeFromList(id)
+-- list.clearList()
+-- list.delete()
+-- showListTable() : output a table with the values in the list
+-- showListCustom()
+
+

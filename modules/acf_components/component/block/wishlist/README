@@ -1,0 +1,9 @@
+# Wishlist
+- Render the list of entity ids in entity_list (wishlist) local storage item
+
+### Details
+- Custom HTML element
+  `<wish_list></wish_list>`
+- Config: Endpoint to use to get the data per entity id (id passed as parameter)
+- View: list of data fields AND html render (output the HTML so we can control it in views)
+- Dependency: entity_list

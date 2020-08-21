@@ -1,0 +1,8 @@
+name: ACF Site Studio
+type: module
+description: Provides ACF components for site studio.
+core_version_requirement: ^8.8 || ^9
+package: Acquia Commerce Framework
+dependencies:
+  - component
+  - cohesion

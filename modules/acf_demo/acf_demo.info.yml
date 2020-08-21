@@ -1,0 +1,10 @@
+name: ACF Demo
+type: module
+description: Provides a working demo with product content.
+core_version_requirement: ^8.8 || ^9
+package: Acquia Commerce Framework
+dependencies:
+  - acf_components
+  - acf_product
+  - acf_feeds
+  - acf_site_studio

@@ -1,0 +1,12 @@
+# ACF Events
+- Manages events that are fired in ACF
+- Sends events to CDP
+
+### Details
+- login
+- productBrowsed
+- categoryBrowsed
+- cartUpdated
+- checkout
+- onsiteSearch
+- logout

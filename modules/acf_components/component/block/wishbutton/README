@@ -1,0 +1,12 @@
+# wish button
+- Toggles heart icon state from solid to outline
+- Stores the entity id in localstorage (wishlist) with entity_list
+
+### Details
+- Custom HTML element
+  `<wish_button data-entity-id=’45’></wish_button>`
+- Config: Icon to use (CSS based)
+- Config: Color to use
+- Config: Label
+- Config: Selector to get ID from
+- Dependency: entity_list, class_icon

@@ -1,0 +1,14 @@
+# Add to cart
+- Quantity selector
+- Variation selector (field_color)
+- Button to add product to cart
+
+### Details
+- Stores the entity id in localstorage (cart) with entity_flag
+- Custom HTML element
+  `<addtocart data-entity-id=’45></addtocart>`
+- Config: class to select the id from on the page
+- Config: color for button
+- Config: Label
+- Config: Selector to get ID from
+- Dependency: entity_list, entity cache
