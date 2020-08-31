@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_product_material
+field_name: field_product_material
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Cotton
+      label: Cotton
+    -
+      value: Linen
+      label: Linen
+    -
+      value: Blend
+      label: Blend
+    -
+      value: Spandex
+      label: Spandex
+    -
+      value: Leather
+      label: Leather
+    -
+      value: Plastic
+      label: Plastic
+    -
+      value: Metal
+      label: Metal
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
