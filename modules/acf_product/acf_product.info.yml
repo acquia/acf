@@ -4,4 +4,13 @@ description: Creates a product content type and adds optional template.
 core_version_requirement: ^8.8 || ^9
 package: Acquia Commerce Framework
 dependencies:
-  - 
+  - comment
+  - image
+  - media
+  - node
+  - options
+  - rest
+  - serialization
+  - taxonomy
+  - text
+  - user

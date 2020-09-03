@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.product
+  module:
+    - text
+id: node.product.body
+field_name: body
+entity_type: node
+bundle: product
+label: Description
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    summary: ''
+    value: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dignissim diam quis enim lobortis scelerisque fermentum dui. Faucibus interdum posuere lorem ipsum. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Ultrices eros in cursus turpis massa tincidunt dui ut. Amet risus nullam eget felis eget nunc lobortis.</p>\r\n\r\n<p>Libero enim sed faucibus turpis in eu mi bibendum neque. Non sodales neque sodales ut etiam sit amet nisl. Pellentesque dignissim enim sit amet venenatis urna cursus eget. Scelerisque purus semper eget duis at tellus. Faucibus purus in massa tempor nec feugiat nisl pretium fusce. Malesuada fames ac turpis egestas sed. Sem viverra aliquet eget sit amet tellus cras adipiscing.</p>\r\n\r\n<p>Elit scelerisque mauris pellentesque pulvinar. Aliquam sem fringilla ut morbi tincidunt. Nullam eget felis eget nunc lobortis mattis aliquam faucibus purus. Sapien eget mi proin sed libero enim sed. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi.</p>\r\n\r\n<p>Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam. Elit scelerisque mauris pellentesque pulvinar. Dui id ornare arcu odio ut sem. Blandit turpis cursus in hac habitasse platea. Ornare suspendisse sed nisi lacus sed viverra tellus in. Cras fermentum odio eu feugiat pretium nibh ipsum. Viverra maecenas accumsan lacus vel.</p>\r\n"
+    format: basic_html
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

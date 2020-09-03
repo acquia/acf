@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Product type'
+vid: product_type
+description: ''
+weight: 0
