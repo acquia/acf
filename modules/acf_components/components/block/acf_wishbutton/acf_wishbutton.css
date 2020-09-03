@@ -1,0 +1,68 @@
+
+.coh-wishbutton {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 100%;
+}
+
+.coh-heartbutton {
+  border-radius: 50%;
+  cursor: pointer;
+  fill: #939393;
+  transition: .7s;
+  padding: 0.5rem;
+  height: 40px;
+  width: 40px;
+}
+
+.coh-heartbutton:hover:not(.saved) {
+  fill: #434343;
+}
+
+.coh-heartbutton.saved {
+  transform: scale(1.05) rotate(360deg);
+  background-color: #C62828;
+  padding: .5rem;
+  fill: white;
+}
+
+.coh-wishlistmessage {
+  visibility: hidden;
+  transition:0.7s;
+  z-index:-2;
+  font-size:2px;
+  font-weight: bold;
+  color:transparent;
+  font-weight:400;
+  height: 0;
+  position:relative;
+  top:-1rem;
+}
+
+.coh-wishlistmessage.save {
+  bottom:120px;
+  font-size: 0.9rem;
+  visibility:visible;
+  animation: messagefade 1s;
+  padding: 0.5rem;
+  height: 0;
+  color: #939393;
+}
+
+@keyframes messagefade {
+  0% {color:transparent;}
+  50% {color:#c6282899;}
+  100% {color:#C62828;}
+}
+
+/* ACF Demo specific adjustment */
+div.product-card .coh-wishlistmessage {
+  display:none;
+}
+
+/* Hide the contetual menu for this block */
+[data-block-plugin-id="component:acf_wishbutton"] > div.contextual {
+  display: none;
+}

@@ -1,0 +1,5 @@
+name: ACF Storage Library
+description: 'Provides library for retreiving API data and caching it in localstorage'
+type: 'library'
+js:
+  acf_storage.js: {}

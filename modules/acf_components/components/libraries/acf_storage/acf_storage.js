@@ -3,6 +3,9 @@
  * 
  * We include methods for getting product data specifically because this is core
  *   functionality that we want to rely on for the cart and wishlist.
+ * 
+ * Note that this can be extended or changed to act as a middleware for a 
+ *   headless ecommerce system.
  */
 
 class acfStorage {
@@ -34,10 +37,20 @@ class acfStorage {
    * @param {object} data
    */
   set(storageId, data) {
-    if (typeof data === 'object') {
+    // If this is has product data, add the time
+    if (typeof data === 'object' && storageId.startsWith('acfProduct-')) {
       data.cacheTime = new Date().getTime();
     }
     return localStorage.setItem(storageId, JSON.stringify(data));
+  }
+
+  /**
+   * Delete ACF data from storage.
+   * 
+   * @param {string} storageId
+   */
+  remove(storageId) {
+    return localStorage.removeItem(storageId);
   }
 
   /**
@@ -74,12 +87,23 @@ class acfStorage {
   }
 
   /**
+   * Write the local storage label for a product cache item. This ensures that
+   *   we are controlling the product label in storage across all consumers of 
+   *   this library.
+   * 
+   * @param {number} id 
+   */
+  labelProduct(id) {
+    return 'acfProduct-' + id;
+  }
+
+  /**
    * Get product data from storage. Load from API if needed.
    * 
    * @param {number} id
    */
   async getProduct(id) {
-    let storageId = 'acfProduct-' + id;
+    let storageId = this.labelProduct(id);
     let cacheAvailable = this.checkAcfStore(storageId);
     if (!cacheAvailable) {
       let data = await this.loadProduct(id);

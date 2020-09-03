@@ -1,0 +1,8 @@
+name: ACF Wish list
+description: 'Provides a list of the products currently saved in local storage.'
+css:
+  acf_wishlist.css: {}
+js:
+  acf_wishlist.js: {}
+dependencies:
+  - component/acf_storage

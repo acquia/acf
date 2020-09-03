@@ -1,5 +1,0 @@
-name: ACF CacheAPI Library
-description: 'Provides a wrapper around CacheAPI to make it easy to request and cache API endpoints'
-type: 'library'
-css:
-  acf_cache.js: {}
