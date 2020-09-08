@@ -1,5 +1,5 @@
 # Acquia Commerce Framework
-Contexual commerce experiences require  multiple modes of integration with the CMS. Acquia Commerce Framework (ACF) combines Drupal as the "glass" and a decoupled e-commerce platform to power the commerce engine. The optimal structure is composed of two different approaches:
+Composable commerce experiences require  multiple modes of integration with the CMS. Acquia Commerce Framework (ACF) combines Drupal as the "glass" and a decoupled e-commerce platform to power the commerce engine. The optimal structure is composed of two different approaches:
 
 1) Cacheable data imported into the CMS.
 > *Example: product data is imported as content so site builders can manage it within the site..*
