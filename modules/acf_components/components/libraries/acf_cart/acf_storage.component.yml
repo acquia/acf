@@ -1,7 +1,0 @@
-name: ACF Cart Library
-description: 'Provides library for managing the users cart in JS'
-type: 'library'
-js:
-  acf_cart.js: {}
-dependencies:
-  - component/acf_storage

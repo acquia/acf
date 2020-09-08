@@ -1,6 +1,0 @@
-name: CSS Icon Library
-description: 'Provides a basic library of 17 CSS based icons and shapes from CSS.gg.'
-type: 'library'
-css:
-  acf_css_icons.css: {}
-# 17 icons from https://css.gg/

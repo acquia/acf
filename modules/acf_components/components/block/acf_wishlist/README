@@ -1,1 +1,7 @@
 # Wishlist
+ - Shows a list of saved/favorited products
+ - Uses the "list" view mode of the entity for the html, so it can be managed in Site Studio
+
+ ### TODO
+  - extend to allow you to remove or add to cart from list
+  - ensure that when added to cart, it is removed from list

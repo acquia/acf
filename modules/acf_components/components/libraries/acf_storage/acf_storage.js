@@ -12,6 +12,8 @@ class acfStorage {
 
   /**
    * Set up the starting constants.
+   *
+   * @TODO Move these values to Drupal config form.
    */
   constructor() {
     // This endpoint is provided by acf_product module

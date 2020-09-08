@@ -1,0 +1,9 @@
+name: ACF Full cart
+description: 'Provides a full cart component to view the contents of the cart.'
+css:
+  acf_fullcart.css: {}
+js:
+  acf_fullcart.js: {}
+dependencies:
+  - component/acf_cart_storage
+  - component/acf_minicart

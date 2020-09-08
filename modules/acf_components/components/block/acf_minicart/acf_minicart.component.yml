@@ -1,0 +1,8 @@
+name: ACF Mini cart
+description: 'Provides a mini cart component to view the contents of the cart.'
+css:
+  acf_minicart.css: {}
+js:
+  acf_minicart.js: {}
+dependencies:
+  - component/acf_cart_storage

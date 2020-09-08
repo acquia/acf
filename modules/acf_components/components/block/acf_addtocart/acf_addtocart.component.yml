@@ -1,0 +1,8 @@
+name: ACF Add to cart button
+description: 'Provides an add to cart button that adds/removes the current content id from the users cart (in localstorage)'
+css:
+  acf_addtocart.css: {}
+js:
+  acf_addtocart.js: {}
+dependencies:
+  - component/acf_cart_storage
