@@ -1,4 +1,4 @@
-#acf-cart-shipping, #acf-cart-discount {
+.coh-style-totals-item.hide {
   display:none;
 }
 
@@ -22,4 +22,9 @@
 
 .coh-style-totals-item label::after {
   content: ':\2003';
+}
+
+.coh-style-promocode {
+    font-style: italic;
+    margin: 0 0.5rem;
 }

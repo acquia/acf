@@ -1,0 +1,8 @@
+name: ACF Cart promo code
+description: 'Allow a user to add a promo code to the cart.'
+css:
+  acf_cart_promo.css: {}
+js:
+  acf_cart_promo.js: {}
+dependencies:
+  - component/acf_cart_storage

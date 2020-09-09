@@ -13,12 +13,21 @@ class cartTotal extends HTMLElement {
     this.storage = new acfCartStorage;
     // Set the DOM elements we want to manage.
     this.el = {};
-    this.el.subtotal = this.querySelector('#acf-cart-subtotal .coh-total-val');
-    this.el.taxes = this.querySelector('#acf-cart-tax .coh-total-val');
-    this.el.shipping = this.querySelector('#acf-cart-shipping .coh-total-val');
-    this.el.discount = this.querySelector('#acf-cart-discount .coh-total-val');
-    this.el.promoCode = this.querySelector('#acf-cart-discount .coh-promocode');
-    this.el.total = this.querySelector('#acf-cart-total .coh-total-val');
+    this.el.subtotal = this.querySelector('#acf-cart-subtotal .coh-style-total-val');
+    this.el.taxes = this.querySelector('#acf-cart-tax .coh-style-total-val');
+    this.el.shipping = this.querySelector('#acf-cart-shipping .coh-style-total-val');
+    this.el.discount = this.querySelector('#acf-cart-discount .coh-style-total-val');
+    this.el.promoCode = this.querySelector('#acf-cart-discount .coh-style-promocode');
+    this.el.total = this.querySelector('#acf-cart-total .coh-style-total-val');
+    // Add event listener for promo code
+    let promobtn = document.querySelector('.coh-style-cart-promocode-button input');
+    promobtn.addEventListener('click', () => this.applyPromoCode());
+    // Add event listener for checkout button to clear cart
+    // this needs to live elsewhere - like in a checkout button component
+    let checkoutBtn = document.querySelector('.coh-button.coh-style-checkout');
+    checkoutBtn.addEventListener('click', () => this.storage.clearCart());
+    // @TODO figure out why this isn't working
+    //this.addEventListener('acfPromoCodeAdded', () => this.applyPromoCode());
     // Render the total
     this.renderTotal();
   }
@@ -38,8 +47,8 @@ class cartTotal extends HTMLElement {
    */
   async buildTotal(cartData) {
     let subtotal = await this.getSubtotal(cartData);
-    let discount = this.getDiscount(cartData, subtotal);
-    let total = parseFloat(subtotal) + parseFloat(discount);
+    let discount = this.getDiscount(subtotal);
+    let total = parseFloat(subtotal) - parseFloat(discount);
     let taxes = this.getTaxes(total);
     total += parseFloat(taxes);
     // Update the total
@@ -66,10 +75,6 @@ class cartTotal extends HTMLElement {
       this.setSubtotal(subtotal);
     }
     return this.convertDecimal(subtotal);
-  }
-
-  async getProductTotal(cartData) {
-
   }
 
   /**
@@ -135,19 +140,23 @@ class cartTotal extends HTMLElement {
   /**
    * Calulates the discount (if any) and updates the HTML totals.
    * 
-   * @param {object} cartData 
-   * @param {number} subtotal 
+   * @param {number} subtotal
    */
-  getDiscount(cartData, subtotal) {
+  getDiscount(subtotal) {
     let discount = 0;
-    // Calculate the discounted amount.
-    if (cartData.promoCode) {
-      discountRate = this.getDiscountRate(cartData.promoCode);
-      discount = -(discountRate * subtotal)/100;
+    let promoCode = localStorage.getItem('acfPromoCode');
+    // Calculate the discounted amount if we have a promocode
+    if (promoCode) {
+      let discountRate = this.getDiscountRate(promoCode);
+      discount = (discountRate * subtotal)/100;
+    }
+    // Otherwise, hide it.
+    else {
+      this.querySelector('#acf-cart-discount').classList.add('hide');
     }
     // Update the cart totals if applicable
     if (discount) {
-      this.setDiscount(discount, cartData.promoCode);
+      this.setDiscount(discount, promoCode);
     }
     return this.convertDecimal(discount);
   }
@@ -159,8 +168,9 @@ class cartTotal extends HTMLElement {
    * @param {string} promocode 
    */
   setDiscount(discount, promoCode) {
-    this.el.promoCode.innerHTML = promoCode;
+    this.querySelector('#acf-cart-discount').classList.remove('hide');
     this.el.discount.innerHTML = this.convertDecimal(discount);
+    this.el.promoCode.innerHTML = promoCode;
   }
 
   /**
@@ -188,6 +198,13 @@ class cartTotal extends HTMLElement {
   }
 
   /**
+   * Check and apply promo code.
+   */
+  applyPromoCode() {
+    setTimeout(() => { this.renderTotal() }, 0.5 * 1000);
+  }
+
+  /**
    * Generate a discount from a promo code. For demo purposes, we are assuming
    *  that the first two numbers in the string are the discount. In a real
    *  world scenario, this would be making an API call to check the code.
@@ -199,7 +216,7 @@ class cartTotal extends HTMLElement {
     let discount = 5;
     if (promoCode) {
       // Pull out the numbers and take the first two as the discount
-      discount = promoCode.replace(/\D/g, '').join([]).substring(0, 2);
+      discount = promoCode.replace(/\D/g, '').substring(0, 2);
     }
     return this.convertDecimal(discount);
   }
