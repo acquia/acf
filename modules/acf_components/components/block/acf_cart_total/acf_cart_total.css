@@ -2,23 +2,24 @@
   display:none;
 }
 
-.coh-total-val::before {
+.coh-style-total-val::before {
   content: ' $';
 }
 
-#acf-cart-discount .coh-total-val::before {
+#acf-cart-discount .coh-style-total-val::before {
   content: ' -$';
 }
 
-.coh-totals-item {
+.coh-style-totals-item {
   display: flex;
   flex-direction: row;
+  margin-bottom: 0.5rem;
 }
 
-.coh-totals-item label {
+.coh-style-totals-item label {
   font-weight: bold;
 }
 
-.coh-totals-item label::after {
+.coh-style-totals-item label::after {
   content: ':\2003';
 }
