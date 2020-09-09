@@ -10,7 +10,7 @@
    constructor() {
     super();
     // Instantiate the ACF cart storage object
-     this.storage = new acfCartStorage;
+    this.storage = new acfCartStorage;
     // Render the cart
     this.renderCart();
   }

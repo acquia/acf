@@ -84,6 +84,13 @@ class acfCartStorage extends acfStorage {
   }
 
   /**
+   * Empty the cart.
+   */
+  clearCart() {
+    this.set('acfCart', {});
+  }
+
+  /**
    * Generates a random 12 digit number for the cart line id.
    */
   generateLineId() {

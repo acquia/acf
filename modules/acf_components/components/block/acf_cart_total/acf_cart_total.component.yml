@@ -1,0 +1,8 @@
+name: ACF Cart total
+description: 'Provides a component showing the current cart total.'
+css:
+  acf_cart_total.css: {}
+js:
+  acf_cart_total.js: {}
+dependencies:
+  - component/acf_cart_storage

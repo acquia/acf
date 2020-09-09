@@ -20,7 +20,7 @@
     */
   renderList() {
     let listData = this.getList();
-    Object.keys(listData).length ? this.buildList(listData) : this.emptyList();
+    Object.keys(listData).length ? this.buildList(listData) : this.emptyMsg();
   }
 
   /**
@@ -44,7 +44,7 @@
    * 
    * @TODO make this a configurable message from the component config
    */
-  emptyList() {
+  emptyMsg() {
     let message = "You don't have anything in your wishlist right now.";
     let wishlist = document.createElement("p");
     wishlist.appendChild(document.createTextNode(message));

@@ -1,0 +1,24 @@
+#acf-cart-shipping, #acf-cart-discount {
+  display:none;
+}
+
+.coh-total-val::before {
+  content: ' $';
+}
+
+#acf-cart-discount .coh-total-val::before {
+  content: ' -$';
+}
+
+.coh-totals-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.coh-totals-item label {
+  font-weight: bold;
+}
+
+.coh-totals-item label::after {
+  content: ':\2003';
+}

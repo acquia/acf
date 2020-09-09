@@ -1,5 +1,5 @@
 /**
- * ACF Mini cart component.
+ * ACF Full cart component.
  */
 
  class fullCart extends miniCart {
@@ -10,6 +10,7 @@
    constructor() {
     super();
   }
+
    /**
     * Build the HTML for a single line item on the full cart list.
     *
