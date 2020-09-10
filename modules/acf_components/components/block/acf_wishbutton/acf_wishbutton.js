@@ -1,7 +1,7 @@
 /**
  * Wish button. Uses vanilla JS to create a button that allows the user to add
  *   items to a wishlist using the ACF Storage library.
- * 
+ *
  * Note that this assumes that the product data is rendered as an <article> from
  *   a node (drupal content entity).
  */
@@ -14,8 +14,8 @@
    constructor() {
     super();
     // Grab the DOM objects we want to work with
-    this.wishBtn = this.querySelector('.coh-wishbutton .coh-heartbutton');
-    this.wishMsg = this.querySelector('.coh-wishbutton .coh-wishlistmessage');
+    this.wishBtn = this.querySelector('.coh-style-wishbutton .coh-style-heartbutton');
+    this.wishMsg = this.querySelector('.coh-style-wishbutton .coh-style-wishlistmessage');
     // Get node id. Assumes we are looking for the parent <article>
     this.parentNodeId = this.wishBtn.closest('article').dataset.historyNodeId;
     // Instantiate the ACF storage object
