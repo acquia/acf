@@ -1,5 +1,13 @@
 .coh-style-cart-promocode-form input {
-    display: block;
-    margin: 0.5rem 0;
-    width: 100%;
+  display: block;
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+.code-entered .coh-style-cart-promocode-form {
+  display: none;
+}
+
+.code-entered .coh-style-cart-promocode-button input {
+  width:100%;
 }

@@ -5,4 +5,4 @@ css:
 js:
   acf_cart_promo.js: {}
 dependencies:
-  - component/acf_cart_storage
+  - component/acf_core

@@ -1,0 +1,6 @@
+name: ACF Cart Manager Library
+description: "Provides library for managing the user's cart in JS"
+type: 'library'
+js:
+  acf_cart_manager.js: {}
+  acf_cart_calculator.js: {}

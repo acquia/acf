@@ -1,7 +1,7 @@
 /**
  * Wish button. Uses vanilla JS to create a button that allows the user to add
  *   items to a wishlist using the ACF Storage library.
- * 
+ *
  * Note that this assumes that the product data is rendered as an <article> from
  *   a node (drupal content entity).
  */
@@ -14,15 +14,12 @@
    constructor() {
     super();
     // Grab the DOM objects we want to work with
-    this.wishBtn = this.querySelector('.coh-wishbutton .coh-heartbutton');
-    this.wishMsg = this.querySelector('.coh-wishbutton .coh-wishlistmessage');
+    this.wishBtn = this.querySelector('.coh-style-wishbutton .coh-style-heartbutton');
+    this.wishMsg = this.querySelector('.coh-style-wishbutton .coh-style-wishlistmessage');
     // Get node id. Assumes we are looking for the parent <article>
     this.parentNodeId = this.wishBtn.closest('article').dataset.historyNodeId;
-    // Instantiate the ACF storage object
-    // @TODO: can we do this once per page load instead of for each component?
-    this.storage = new acfStorage;
-    // Generate the product ID (label) to be used with ACF Storage
-    this.productId = this.storage.labelProduct(this.parentNodeId);
+    // Generate the product ID (label) to be used with ACF
+    this.productId = ACF.cartManager._labelProduct(this.parentNodeId);
     // If it exists, then add the class *before* rendering
     if (this.isSaved()) {
       this.wishBtn.classList.add('saved');
@@ -40,7 +37,7 @@
     this.wishBtn.classList.toggle('saved');
     this.wishMsg.classList.toggle('save');
     // Load the product from API if not already done
-    this.storage.getProduct(this.parentNodeId);
+    ACF.cartManager.getProduct(this.parentNodeId);
     // Update the wishlist
     this.isSaved() ? this.removeItem() : this.addItem();
    }
@@ -49,7 +46,7 @@
    * Get the list item out of storage
    */
   getList() {
-    this.list = this.storage.get('acfWishList') ? this.storage.get('acfWishList') : new Object;
+    this.list = ACF.get('acfWishList') ? ACF.get('acfWishList') : new Object;
   }
 
    /**
@@ -59,7 +56,7 @@
   addItem() {
     this.getList();
     this.list[this.productId] = this.parentNodeId;
-    this.storage.set('acfWishList', this.list);
+    ACF.set('acfWishList', this.list);
     this.productSaved = true;
   }
 
@@ -69,7 +66,7 @@
   removeItem() {
     this.getList();
     delete this.list[this.productId];
-    this.storage.set('acfWishList', this.list);
+    ACF.set('acfWishList', this.list);
     this.productSaved = false;
   }
 

@@ -1,4 +1,4 @@
-# ACF Events
+# ACF Event Emitter
 - Manages events that are fired in ACF
 - Sends events to CDP
 

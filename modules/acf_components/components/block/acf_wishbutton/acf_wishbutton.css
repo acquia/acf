@@ -1,5 +1,5 @@
 
-.coh-wishbutton {
+.coh-style-wishbutton {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-.coh-heartbutton {
+.coh-style-heartbutton {
   border-radius: 50%;
   cursor: pointer;
   fill: #939393;
@@ -17,18 +17,18 @@
   width: 40px;
 }
 
-.coh-heartbutton:hover:not(.saved) {
+.coh-style-heartbutton:hover:not(.saved) {
   fill: #434343;
 }
 
-.coh-heartbutton.saved {
+.coh-style-heartbutton.saved {
   transform: scale(1.05) rotate(360deg);
   background-color: #C62828;
   padding: .5rem;
   fill: white;
 }
 
-.coh-wishlistmessage {
+.coh-style-wishlistmessage {
   visibility: hidden;
   transition:0.7s;
   z-index:-2;
@@ -41,7 +41,7 @@
   top:-1rem;
 }
 
-.coh-wishlistmessage.save {
+.coh-style-wishlistmessage.save {
   bottom:120px;
   font-size: 0.9rem;
   visibility:visible;
@@ -58,7 +58,7 @@
 }
 
 /* ACF Demo specific adjustment */
-div.product-card .coh-wishlistmessage {
+div.product-card .coh-style-wishlistmessage {
   display:none;
 }
 

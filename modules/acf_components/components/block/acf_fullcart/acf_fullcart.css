@@ -1,4 +1,19 @@
 full-cart li {
   list-style: none;
   margin: 0;
+  display:flex;
+}
+
+full-cart article {
+  width:100%;
+}
+
+full-cart button {
+  opacity:0.5;
+  transition: opacity 1s ease-in-out;
+}
+
+full-cart button:hover {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
 }

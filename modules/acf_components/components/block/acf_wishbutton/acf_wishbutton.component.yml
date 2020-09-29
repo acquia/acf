@@ -1,8 +1,8 @@
 name: ACF Wish button
-description: 'Provides a wish button that adds/removes the current content id from the users wishlist (in localstorage)'
+description: 'Provides a wish button that adds/removes the current content id from the users wishlist'
 css:
   acf_wishbutton.css: {}
 js:
   acf_wishbutton.js: {}
 dependencies:
-  - component/acf_storage
+  - component/acf_core

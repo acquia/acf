@@ -16,8 +16,6 @@ class acfStorage {
    * @TODO Move these values to Drupal config form.
    */
   constructor() {
-    // This endpoint is provided by acf_product module
-    this.productAPI = '/api/acf/product/';
     // Default cache lifetime of 5 min
     this.cacheLifetime = 300000;
   }
@@ -86,43 +84,6 @@ class acfStorage {
   async fetchAsync(apicall) {
     let response = await fetch(apicall);
     return await response.json()
-  }
-
-  /**
-   * Write the local storage label for a product cache item. This ensures that
-   *   we are controlling the product label in storage across all consumers of 
-   *   this library.
-   * 
-   * @param {number} id 
-   */
-  labelProduct(id) {
-    return 'acfProduct-' + id;
-  }
-
-  /**
-   * Get product data from storage. Load from API if needed.
-   * 
-   * @param {number} id
-   */
-  async getProduct(id) {
-    let storageId = this.labelProduct(id);
-    let cacheAvailable = this.checkAcfStore(storageId);
-    if (!cacheAvailable) {
-      let data = await this.loadProduct(id);
-      this.set(storageId, data[0]);
-    }
-    return this.get(storageId);
-  }
-
-  /**
-  * Get product data from API. By default this is assumed to use the content id
-  *   in Drupal (node id).
-  *
-  * @param {number} id
-  */
-  async loadProduct(id) {
-    let endpoint = this.productAPI + id + '?_format=json';
-    return await this.fetchAsync(endpoint);
   }
 
 }

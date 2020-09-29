@@ -5,4 +5,4 @@ css:
 js:
   acf_addtocart.js: {}
 dependencies:
-  - component/acf_cart_storage
+  - component/acf_core

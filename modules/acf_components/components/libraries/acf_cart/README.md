@@ -1,6 +1,7 @@
 # ACF Cart
 - Manages the storage and retrieval of product IDs
 - Stores product ID, variation option, and quantity per row
+- This object should be used most of the time
 
 ### Details
 - Uses entity_list to create an `acf_cart` item in localstorage

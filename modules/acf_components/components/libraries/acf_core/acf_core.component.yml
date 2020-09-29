@@ -1,0 +1,10 @@
+name: ACF Core Library
+description: "Provides the default ACF environment for components."
+type: 'library'
+js:
+  acf_core.js: {}
+  elements/acfButton.js: {}
+dependencies:
+  - component/acf_storage
+  - component/acf_cart_manager
+  - component/acf_event_emitter

@@ -5,4 +5,5 @@ css:
 js:
   acf_minicart.js: {}
 dependencies:
-  - component/acf_cart_storage
+  - component/acf_core
+  - component/acf_fullcart

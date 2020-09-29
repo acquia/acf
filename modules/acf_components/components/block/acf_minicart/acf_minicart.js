@@ -2,26 +2,14 @@
  * ACF Mini cart component.
  */
 
- class miniCart extends HTMLElement {
+ class miniCart extends fullCart {
 
    /**
    * Custom element constructor.
    */
    constructor() {
     super();
-    // Instantiate the ACF cart storage object
-    this.storage = new acfCartStorage;
-    // Render the cart
-    this.renderCart();
   }
-
-   /**
-    * Render the cart.
-    */
-   renderCart() {
-     let cartData = this.storage.getCart();
-     Object.keys(cartData).length ? this.buildCart(cartData) : this.emptyMsg();
-   }
 
    /**
     * Build the HTML for the cart list.
@@ -38,30 +26,6 @@
      });
      this.appendChild(cartList);
    }
-
-   /**
-    * Build the HTML for a single line item on the mini cart list.
-    *
-    * @param {number} lineId 
-    */
-   async buildLineItem(lineId) {
-     let id = lineId.id;
-     let productData = await this.storage.getProduct(id);
-     return productData.rendered_entity;
-   }
-
-   /**
-    * Build the empty cart message
-    * 
-    * @TODO make this a configurable message from the component config
-    */
-   emptyMsg() {
-     let message = "You don't have anything in your cart right now.";
-     let cartList = document.createElement("h4");
-     cartList.appendChild(document.createTextNode(message));
-     this.appendChild(cartList);
-   }
-
 
  }
 
