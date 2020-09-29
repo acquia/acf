@@ -1,0 +1,78 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.list
+    - field.field.node.product.body
+    - field.field.node.product.comment
+    - field.field.node.product.field_meta_tags
+    - field.field.node.product.field_persona
+    - field.field.node.product.field_product_brand
+    - field.field.node.product.field_product_color
+    - field.field.node.product.field_product_image
+    - field.field.node.product.field_product_image_more
+    - field.field.node.product.field_product_material
+    - field.field.node.product.field_product_model
+    - field.field.node.product.field_product_on_sale
+    - field.field.node.product.field_product_price_original
+    - field.field.node.product.field_product_price_sale
+    - field.field.node.product.field_product_rating
+    - field.field.node.product.field_product_sku
+    - field.field.node.product.field_product_tags
+    - field.field.node.product.field_product_type
+    - field.field.node.product.field_product_weight
+    - node.type.product
+  module:
+    - user
+id: node.product.list
+targetEntityType: node
+bundle: product
+mode: list
+content:
+  field_product_image:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: thumbnail
+      link: false
+    third_party_settings: {  }
+  field_product_price_original:
+    type: number_decimal
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_product_sku:
+    type: string
+    weight: 1
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  body: true
+  comment: true
+  field_meta_tags: true
+  field_persona: true
+  field_product_brand: true
+  field_product_color: true
+  field_product_image_more: true
+  field_product_material: true
+  field_product_model: true
+  field_product_on_sale: true
+  field_product_price_sale: true
+  field_product_rating: true
+  field_product_tags: true
+  field_product_type: true
+  field_product_weight: true
+  links: true
+  search_api_excerpt: true

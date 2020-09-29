@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.list
     - field.storage.media.field_media_image
     - field.storage.node.body
     - field.storage.node.field_product_brand
@@ -212,7 +213,7 @@ display:
           type: number_decimal
           settings:
             thousand_separator: ','
-            prefix_suffix: true
+            prefix_suffix: false
             decimal_separator: .
             scale: 2
           group_column: value
@@ -722,7 +723,7 @@ display:
           type: number_decimal
           settings:
             thousand_separator: ','
-            prefix_suffix: true
+            prefix_suffix: false
             decimal_separator: .
             scale: 2
           group_column: value
@@ -1159,7 +1160,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          view_mode: default
+          view_mode: list
           entity_type: node
           plugin_id: rendered_entity
       filters:
@@ -1287,8 +1288,57 @@ display:
         options:
           field_options:
             title:
-              alias: ''
+              alias: field_options:
+            title:
+              alias: title
               raw_output: false
+            field_product_price_original:
+              alias: price
+              raw_output: false
+            field_product_sku:
+              alias: sku
+              raw_output: false
+            field_media_image:
+              alias: image_url
+              raw_output: false
+            field_product_image:
+              alias: image_html
+              raw_output: false
+            field_product_brand:
+              alias: brand
+              raw_output: false
+            field_product_model:
+              alias: model
+              raw_output: false
+            field_product_on_sale:
+              alias: on_sale
+              raw_output: false
+            field_product_image_more:
+              alias: image_more
+              raw_output: false
+            field_product_price_sale:
+              alias: price_sale
+              raw_output: false
+            field_product_rating:
+              alias: rating
+              raw_output: false
+            field_product_color:
+              alias: color
+              raw_output: false
+            field_product_material:
+              alias: material
+              raw_output: false
+            field_product_tags:
+              alias: tags
+              raw_output: false
+            field_product_type:
+              alias: type
+              raw_output: false
+            body:
+              alias: description
+              raw_output: false
+            rendered_entity:
+              alias: line_html
     cache_metadata:
       max-age: -1
       contexts:
