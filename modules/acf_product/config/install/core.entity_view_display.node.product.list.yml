@@ -5,8 +5,6 @@ dependencies:
     - core.entity_view_mode.node.list
     - field.field.node.product.body
     - field.field.node.product.comment
-    - field.field.node.product.field_meta_tags
-    - field.field.node.product.field_persona
     - field.field.node.product.field_product_brand
     - field.field.node.product.field_product_color
     - field.field.node.product.field_product_image
@@ -61,8 +59,6 @@ hidden:
   addtoany: true
   body: true
   comment: true
-  field_meta_tags: true
-  field_persona: true
   field_product_brand: true
   field_product_color: true
   field_product_image_more: true
