@@ -1288,8 +1288,6 @@ display:
         options:
           field_options:
             title:
-              alias: field_options:
-            title:
               alias: title
               raw_output: false
             field_product_price_original:
