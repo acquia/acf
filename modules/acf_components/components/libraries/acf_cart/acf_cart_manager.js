@@ -13,6 +13,7 @@ class acfCartManager {
     // This endpoint is provided by acf_product module
     this.productAPI = '/api/acf/product/';
     this.calc = new acfCartCalculator;
+    // @TODO: refactor to use this.cart instead of ACF.cart, and then update ACF.cart on this.update
     // Set event listeners
     ACF.events.on('acfAddPromoCode', this.setPromoCode.bind(this));
     ACF.events.on('acfRemovePromoCode', this.resetPromoCode.bind(this));
@@ -25,6 +26,7 @@ class acfCartManager {
    */
   get() {
     let cart = ACF.get('acfCart');
+    ACF.cart = cart;
     return cart ? cart : this._newCart();
   }
 
@@ -52,7 +54,7 @@ class acfCartManager {
 
   /**
    * Add a product to the cart
-   * 
+   *
    * @param {number} id
    *   The node id for the product.
    * @param {number} quantity
@@ -61,6 +63,7 @@ class acfCartManager {
    *   An array of additional attributes like color, size, etc.
    */
   addToCart(id, quantity, attributes) {
+    this.get();
     // Generate the cart line item
     let lineId = this._generateLineId();
     // Add line item to cart
@@ -77,7 +80,7 @@ class acfCartManager {
 
   /**
    * Update a line item in the cart.
-   * 
+   *
    * @param {number} lineId
    *   The id for the line item in the cart to be updated.
    * @param {number} quantity
@@ -86,6 +89,7 @@ class acfCartManager {
    *   The new attributes array to use
    */
   updateCartProduct(lineId, quantity, attributes) {
+    this.get();
     if (ACF.cart.products[lineId]) {
       ACF.cart.products[lineId].qty = quantity;
       ACF.cart.products[lineId].attr = attributes;
@@ -98,10 +102,11 @@ class acfCartManager {
 
   /**
    * Remove a line item from the cart.
-   * 
-   * @param {number} lineId 
+   *
+   * @param {number} lineId
    */
   removeFromCart(lineId) {
+    this.get();
     let id = ACF.cart.products[lineId].id;
     delete ACF.cart.products[lineId];
     // Trigger event for other components to listen to.
@@ -113,9 +118,10 @@ class acfCartManager {
   /**
    * Set the promocode for the cart.
    *
-   * @param {string} promoCode 
+   * @param {string} promoCode
    */
   setPromoCode(promoCode) {
+    this.get();
     ACF.cart.promoCode = promoCode;
     this.update();
   }
@@ -123,16 +129,17 @@ class acfCartManager {
   /**
    * Reset the promocode for the cart.
    *
-   * @param {string} promoCode 
+   * @param {string} promoCode
    */
   resetPromoCode() {
+    this.get();
     ACF.cart.promoCode = '';
     this.update();
   }
 
   /**
    * Get product data from storage. Load from API if needed.
-   * 
+   *
    * @param {number} id
    */
   async getProduct(id) {
@@ -172,8 +179,8 @@ class acfCartManager {
    * Helper - write the local storage label for a product cache item. This
    *  ensures that we are controlling the product label in storage across all
    *  consumers of this library.
-   * 
-   * @param {number} id 
+   *
+   * @param {number} id
    */
   _labelProduct(id) {
     return 'acfProduct-' + id;

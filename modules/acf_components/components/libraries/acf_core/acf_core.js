@@ -17,3 +17,7 @@ ACF.cartManager = new acfCartManager;
 
 // Add the cart object we will use to manage cart state.
 ACF.cart = ACF.cartManager.get();
+
+// Temporary fix for the demo - event listener for checkout buttons. These will
+//  this will be added as a component later.
+document.querySelector('a.coh-style-checkout').addEventListener('click', () => ACF.cartManager.empty());

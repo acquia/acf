@@ -72,6 +72,7 @@ class cartTotal extends HTMLElement {
    * Helper - add event listeners
    */
   _setEvents() {
+    ACF.events.on('acfAddToCart', this.updateTotal.bind(this));
     ACF.events.on('acfUpdateCart', this.updateTotal.bind(this));
     ACF.events.on('acfEmptyCart', this.updateTotal.bind(this));
     // Add event listener for checkout button to clear cart

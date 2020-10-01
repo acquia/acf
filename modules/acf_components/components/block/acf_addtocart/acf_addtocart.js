@@ -24,11 +24,8 @@
     * Button click method
     */
    async buttonClick() {
-    // Disable the button to prevent multiple clicks
-    this.disabled = true;
     // Set the variables for the cart line item
     // @TODO: update this to use a form as part of the button.
-    // @TODO: ensure that we can't click this more than once until it resets.
     let id = this.parentNodeId;
     let quantity = 1;
     let attributes = [];
@@ -38,8 +35,6 @@
     await ACF.cartManager.getProduct(id);
     // Update the cart
     ACF.cartManager.addToCart(id, quantity, attributes);
-    // Enable the button again
-    this.disabled = false;
   }
 
   /**
@@ -47,9 +42,14 @@
    * @TODO make the classes, text, and timings configurable.
    */
   _animateButton() {
+    // Disable the button to prevent multiple clicks
+    this.disabled = true;
+    // Run through the animations
     this._changeClasses('coh-style-onclick', false);
     setTimeout(() => { this._changeClasses('coh-style-validate', 'coh-style-onclick') }, 1.5 * 1000);
     setTimeout(() => { this._changeClasses(false, 'coh-style-validate') }, 2.5 * 1000);
+    // Enable the button again
+    this.disabled = false;
   }
 
   /**

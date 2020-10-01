@@ -51,7 +51,7 @@
   /**
    * Create an ACF button to remove the cart line item.
    *
-   * @param {string} lineId 
+   * @param {string} lineId
    */
   buildRemoveButton(lineId) {
     let event = this._lineItemEvent(lineId);
@@ -68,13 +68,10 @@
   /**
    * Remove a line item from the cart listing.
    *
-   * @param {string} lineId 
+   * @param {string} lineId
    */
   removeLineItem(lineId) {
     let lineClass = this._lineItemClass(lineId);
-    let productId = ACF.cart.products[lineId].id;
-    // Trigger event to let other systems know about this.
-    ACF.events.emit('acfRemoveFromCart', productId);
     // Remove the item from the cart object
     ACF.cartManager.removeFromCart(lineId);
     // Remove the item in the visual cart
