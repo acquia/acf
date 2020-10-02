@@ -9,9 +9,6 @@
    */
    constructor() {
     super();
-    // Instantiate the ACF storage object
-    this.storage = new acfStorage;
-    // Build and add the list of products
     this.renderList();
   }
 
@@ -31,8 +28,8 @@
     // Loop through the list and make a line item for each
     Object.values(listData).forEach(async id => {
       let listItem = document.createElement("li");
-      let productData = await this.storage.getProduct(id);
-      let HTMLsnippet = productData.rendered_entity;
+      let productData = await ACF.cartManager.getProduct(id);
+      let HTMLsnippet = productData.line_html;
       listItem.innerHTML = HTMLsnippet;
       wishlist.appendChild(listItem);
     });
@@ -55,7 +52,7 @@
     * Get the list item out of storage.
     */
    getList() {
-     let listData = this.storage.get('acfWishList');
+     let listData = ACF.get('acfWishList');
      return listData ? listData : new Object;
    }
 

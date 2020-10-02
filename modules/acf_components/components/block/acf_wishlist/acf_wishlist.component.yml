@@ -5,4 +5,4 @@ css:
 js:
   acf_wishlist.js: {}
 dependencies:
-  - component/acf_storage
+  - component/acf_core

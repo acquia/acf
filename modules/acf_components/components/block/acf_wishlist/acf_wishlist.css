@@ -2,3 +2,7 @@ wish-list li {
   list-style: none;
   margin: 0;
 }
+
+.hide-mini-cart {
+  display:none;
+}
