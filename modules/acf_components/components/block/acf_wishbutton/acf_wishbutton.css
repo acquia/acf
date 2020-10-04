@@ -13,19 +13,23 @@
   fill: #939393;
   transition: .7s;
   padding: 0.5rem;
-  height: 40px;
-  width: 40px;
+  height: 42px;
+  width: 42px;
+  border: solid 1px #dddddd;
+  background: #ffffffaa;
 }
 
 .coh-style-heartbutton:hover:not(.saved) {
   fill: #434343;
+  border-color: #939393;
 }
 
 .coh-style-heartbutton.saved {
   transform: scale(1.05) rotate(360deg);
   background-color: #C62828;
   padding: .5rem;
-  fill: white;
+  fill: #ffffff;
+  border-color: #ffffff;
 }
 
 .coh-style-wishlistmessage {
