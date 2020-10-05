@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: product
+label: 'Content - product'
+type: 'canonical_entities:node'
+pattern: '/product/[node:field_product_type]/[node:title]'
+selection_criteria:
+  5721e0de-d772-4002-bb4d-720bf8f1d235:
+    id: node_type
+    bundles:
+      product: product
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 5721e0de-d772-4002-bb4d-720bf8f1d235
+selection_logic: and
+weight: -5
+relationships:
+  'node:langcode:language':
+    label: Language
