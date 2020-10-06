@@ -15,8 +15,8 @@ globalThis.ACF = new acfStorage;
 ACF.events = new acfEventEmitter;
 ACF.cartManager = new acfCartManager;
 
-// Add the cart object we will use to manage cart state.
-ACF.cart = ACF.cartManager.get();
+// Instantiate the cart.
+ACF.cartManager.get();
 
 // Temporary fix for the demo - event listener for checkout buttons. These will
 //  this will be added as a component later.

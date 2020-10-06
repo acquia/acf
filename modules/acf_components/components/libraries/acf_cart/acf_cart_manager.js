@@ -26,8 +26,8 @@ class acfCartManager {
    */
   get() {
     let cart = ACF.get('acfCart');
-    ACF.cart = cart;
-    return cart ? cart : this._newCart();
+    ACF.cart = cart ? cart : this._newCart();
+    return cart;
   }
 
   /**
