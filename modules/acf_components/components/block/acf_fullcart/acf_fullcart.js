@@ -106,9 +106,11 @@
    * @TODO make this a configurable message from the component config
    */
   _emptyMsg() {
-    let message = "You don't have anything in your cart right now.";
-    let cartList = document.createElement("h4");
-    cartList.appendChild(document.createTextNode(message));
+    let message = document.createElement("h4");
+    message.textContent = "You don't have anything in your cart right now.";
+    let cartList = document.createElement("div");
+    cartList.className  = "empty-msg";
+    cartList.appendChild(message);
     this.appendChild(cartList);
   }
 
