@@ -16,12 +16,16 @@
     *
     * @param {string} cardData
     */
-   buildCart(cartData) {
+
+   buildCart() {
      let cartList = document.createElement("ul");
      // Loop through the list and make a line item for each
-     Object.values(cartData).forEach(async lineId => {
+     Object.entries(ACF.cart.products).forEach(async ([lineId, lineIdObj]) => {
+       let productId = lineIdObj.id;
        let lineItem = document.createElement("li");
-       lineItem.innerHTML = await this.buildLineItem(lineId);
+       let lineClass = this._lineItemClass(lineId);
+       lineItem.classList.add(lineClass);
+       lineItem.innerHTML = await this.buildLineItem(productId);
        cartList.appendChild(lineItem);
      });
      this.appendChild(cartList);
