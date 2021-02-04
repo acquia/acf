@@ -9,7 +9,12 @@
   */
   constructor() {
     super();
+    // Instantiate the cart.
     this.renderCart();
+    // Add listeners to update the cart.
+    ACF.events.on('acfAddToCart', this.renderCart.bind(this));
+    ACF.events.on('acfEmptyCart', this.renderCart.bind(this));
+    ACF.events.on('acfUpdateCart', this.renderCart.bind(this));
   }
 
   /**
@@ -26,13 +31,22 @@
     let cartList = document.createElement("ul");
     // Loop through the list and make a line item for each
     Object.entries(ACF.cart.products).forEach(async ([lineId, lineIdObj]) => {
+      // Create the line from the rendered HTML provided by the CMS.
       let productId = lineIdObj.id;
       let lineItem = document.createElement("li");
       let lineClass = this._lineItemClass(lineId);
       lineItem.classList.add(lineClass);
       lineItem.innerHTML = await this.buildLineItem(productId);
+      // Add the remove button.
       lineItem.appendChild(this.buildRemoveButton(lineId));
+      // Attach the line item to the cart.
       cartList.appendChild(lineItem);
+      // Set the default quantity and provide an onchange event listener.
+      let select = lineItem.querySelector('[name="quantity"]');
+      select.value = lineIdObj.qty;
+      select.addEventListener('change', (event) => {
+        ACF.cartManager.updateCartProduct(lineId, event.target.value, lineIdObj.attr);
+      });
     });
     this.appendChild(cartList);
   }
@@ -106,11 +120,13 @@
    * @TODO make this a configurable message from the component config
    */
   _emptyMsg() {
-    let message = document.createElement("h4");
-    message.textContent = "You don't have anything in your cart right now.";
-    let cartList = document.createElement("div");
-    cartList.className  = "empty-msg";
-    cartList.appendChild(message);
+    let cart = this.querySelector('ul');
+    if (cart) {
+      cart.remove();
+    }
+    let message = "You don't have anything in your cart right now.";
+    let cartList = document.createElement("h4");
+    cartList.appendChild(document.createTextNode(message));
     this.appendChild(cartList);
   }
 

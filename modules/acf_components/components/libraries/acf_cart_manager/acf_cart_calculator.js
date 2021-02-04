@@ -30,7 +30,7 @@ class acfCartCalculator {
 
   /**
    * Calculate the total price of all items in the cart.
-   * 
+   *
    * @param {object} products
    */
   async getSubtotal(products) {
@@ -39,7 +39,9 @@ class acfCartCalculator {
     for (let lineId of Object.keys(products)) {
       let id = products[lineId].id;
       let product = await ACF.cartManager.getProduct(id);
-      subtotal += parseFloat(product.price);
+      let cost = (product.price_sale > 0) ? product.price_sale : product.price;
+      let qty = products[lineId].qty || 1;
+      subtotal += parseFloat(cost * qty);
     }
     // Update the subtotal
     if (subtotal) {
@@ -50,8 +52,8 @@ class acfCartCalculator {
 
   /**
    * Set the subtotal amount.
-   * 
-   * @param {number} subtotal 
+   *
+   * @param {number} subtotal
    */
   setSubtotal(subtotal) {
     ACF.cart.amount.subtotal = this._twoDecimal(subtotal);
@@ -59,8 +61,8 @@ class acfCartCalculator {
 
   /**
    * Calculate the taxes for the cart totals.
-   * 
-   * @param {number} total 
+   *
+   * @param {number} total
    */
   getTaxes(total) {
     let taxRate = this.getTaxRate();
@@ -74,8 +76,8 @@ class acfCartCalculator {
 
   /**
    * Set the tax amount.
-   * 
-   * @param {number} tax 
+   *
+   * @param {number} tax
    */
   setTaxes(tax) {
     ACF.cart.amount.tax = this._twoDecimal(tax);
@@ -83,8 +85,8 @@ class acfCartCalculator {
 
   /**
    * Placeholder for future shipping functionality.
-   * 
-   * @param {number} shipping 
+   *
+   * @param {number} shipping
    */
   getShipping() {
     let shipping = ACF.cart.amount.shipping;
@@ -93,8 +95,8 @@ class acfCartCalculator {
 
   /**
    * Apply the shipping amount to the totals and show/hide the shipping.
-   * 
-   * @param {number} shipping 
+   *
+   * @param {number} shipping
    */
   setShipping(shipping) {
     ACF.cart.amount.shipping = this._twoDecimal(shipping);
@@ -102,7 +104,7 @@ class acfCartCalculator {
 
   /**
    * Calulates the discount (if any) and updates the HTML totals.
-   * 
+   *
    * @param {number} subtotal
    */
   getDiscount(subtotal) {
@@ -122,9 +124,9 @@ class acfCartCalculator {
 
   /**
    * Update the total component with the discount and promocode.
-   * 
-   * @param {number} discount 
-   * @param {string} promocode 
+   *
+   * @param {number} discount
+   * @param {string} promocode
    */
   setDiscount(discount, promoCode) {
     ACF.cart.promoCode = promoCode;
@@ -141,8 +143,8 @@ class acfCartCalculator {
 
   /**
    * Update the total for the cart.
-   * 
-   * @param {number} total 
+   *
+   * @param {number} total
    */
   setTotal(total) {
     ACF.cart.amount.total = this._twoDecimal(total);
@@ -159,8 +161,8 @@ class acfCartCalculator {
    * Generate a discount from a promo code. For demo purposes, we are assuming
    *  that the first two numbers in the string are the discount. In a real
    *  world scenario, this would be making an API call to check the code.
-   * 
-   * @param {string} promoCode 
+   *
+   * @param {string} promoCode
    */
   getDiscountRate(promoCode) {
     // Set the default discount rate
@@ -174,8 +176,8 @@ class acfCartCalculator {
 
   /**
    * Helper - Convert numbers to a decimal with 2 places.
-   * 
-   * @param {number} number 
+   *
+   * @param {number} number
    */
   _twoDecimal(number) {
     return parseFloat(number).toFixed(2);

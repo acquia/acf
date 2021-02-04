@@ -1,3 +1,4 @@
-addtocart-button {
+addtocart-form button {
   cursor: pointer;
+  display: block;
 }

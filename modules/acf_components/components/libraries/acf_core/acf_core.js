@@ -1,27 +1,21 @@
 /**
- * Managing the core ACF functionality.
+ * Providing additional global ACF Core functionality.
  *
- * We use the global ACF object to manage the state of the system across all
- *  components. This is an assumption we rely on for consistency. The global
- *  object will contain all of the most recent information, and then it will
- *  be copied to storage for retrieval on the next page load.
+ * True core functionality is provided by the plugin chosen. By default this is
+ *   the acf_demo_plugin library. However, we can create a "plugin" type
+ *   component and assign "acf_core" as the parent to optionally override the
+ *   default behavior.
+ *
+ * When a plugin is chosen, it will override the dependencies for acf_core and
+ *   load the plugin library instead.
  */
 
-// Create a single global ACF object
-// @todo make this configurable from the UI
-globalThis.ACF = new acfStorage;
-
-// Extend the object with subsystems.
-ACF.events = new acfEventEmitter;
-ACF.cartManager = new acfCartManager;
-
-// Instantiate the cart.
-ACF.cartManager.get();
+// drupalSettings.component.plugins.ACFCore;
 
 // Temporary fix for the demo - event listener for checkout buttons. These will
 //  this will be added as a component later.
-let checkoutBtn = document.querySelector('a.coh-style-checkout')
-if (checkoutBtn) {
-  checkoutBtn.addEventListener('click', () => ACF.cartManager.empty());
-}
+//let checkoutBtn = document.querySelector('a.coh-style-checkout')
+//if (checkoutBtn) {
+//  checkoutBtn.addEventListener('click', () => ACF.cartManager.empty());
+//}
 

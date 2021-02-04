@@ -1,7 +1,7 @@
 /**
- * Custom close button element. Use the 'data-event' attribute when implementing
+ * Custom button element. Use the 'data-event' attribute when implementing
  *  to choose the event to trigger when clicked.
- * 
+ *
  * This button needs one or more data attributes to function properly:
  *  - data-event: the name of the function to associate to the click
  *  - data-arg1: optional first argument

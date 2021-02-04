@@ -1,0 +1,10 @@
+name: ACF Core Demo Plugin
+description: 'Provides the libraries needed for the ACF Core Demo'
+type: 'plugin'
+parent: 'acf_core'
+js:
+  acf_demo_core.js: {}
+dependencies:
+  - component/acf_storage
+  - component/acf_cart_manager
+  - component/acf_event_emitter

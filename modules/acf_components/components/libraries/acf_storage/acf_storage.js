@@ -1,10 +1,10 @@
 /**
  * Library for retrieving and caching ACF data using localstorage.
- * 
+ *
  * We include methods for getting product data specifically because this is core
  *   functionality that we want to rely on for the cart and wishlist.
- * 
- * Note that this can be extended or changed to act as a middleware for a 
+ *
+ * Note that this can be extended or changed to act as a middleware for a
  *   headless ecommerce system.
  */
 
@@ -22,7 +22,7 @@ class acfStorage {
 
 /**
  * Get ACF data from storage.
- * 
+ *
  * @param {string} storageId
  */
   get(storageId) {
@@ -32,7 +32,7 @@ class acfStorage {
   /**
    * Set ACF data into storage & add the cache time.
    *   This expects the data to be an object if it will have cache refresh.
-   * 
+   *
    * @param {string} storageId
    * @param {object} data
    */
@@ -46,7 +46,7 @@ class acfStorage {
 
   /**
    * Delete ACF data from storage.
-   * 
+   *
    * @param {string} storageId
    */
   remove(storageId) {
@@ -58,7 +58,7 @@ class acfStorage {
    *   boolean if it is available or not. Stale data is assumed not available.
    *
    * @param {string} storageId
-   * 
+   *
    * @returns {boolean}
    */
   checkAcfStore(storageId) {
@@ -79,11 +79,16 @@ class acfStorage {
   /**
    * Create an async wrapper around fetch
    *
-   * @param {string} apicall 
+   * @param {string} apicall
    */
   async fetchAsync(apicall) {
     let response = await fetch(apicall);
     return await response.json()
+  }
+
+  async fetchToken() {
+    let response = await fetch("/session/token");
+    return await response.text();
   }
 
 }

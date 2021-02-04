@@ -4,7 +4,7 @@ type: 'library'
 js:
   acf_core.js: {}
   elements/acfButton.js: {}
+  elements/acfSelect.js: {}
+# We will default to the acf_demo_core plugin, but this can be overridden.
 dependencies:
-  - component/acf_storage
-  - component/acf_cart_manager
-  - component/acf_event_emitter
+  - component/acf_demo_core
