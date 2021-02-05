@@ -28,7 +28,7 @@
        lineItem.innerHTML = await this.buildLineItem(productId);
        cartList.appendChild(lineItem);
      });
-     this.appendChild(cartList);
+    return cartList;
    }
 
  }

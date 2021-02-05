@@ -13,15 +13,17 @@
     this.renderCart();
     // Add listeners to update the cart.
     ACF.events.on('acfAddToCart', this.renderCart.bind(this));
+    ACF.events.on('acfRemoveFromCart', this.renderCart.bind(this));
     ACF.events.on('acfEmptyCart', this.renderCart.bind(this));
-    ACF.events.on('acfUpdateCart', this.renderCart.bind(this));
   }
 
   /**
    * Render the cart.
    */
   renderCart() {
-    Object.keys(ACF.cart.products).length ? this.buildCart() : this._emptyMsg();
+    let cartHTML = Object.keys(ACF.cart.products).length ? this.buildCart() : this._emptyMsg();
+    this._removeCart();
+    this.appendChild(cartHTML);
   }
 
   /**
@@ -48,7 +50,7 @@
         ACF.cartManager.updateCartProduct(lineId, event.target.value, lineIdObj.attr);
       });
     });
-    this.appendChild(cartList);
+    return cartList;
   }
 
   /**
@@ -85,15 +87,7 @@
    * @param {string} lineId
    */
   removeLineItem(lineId) {
-    let lineClass = this._lineItemClass(lineId);
-    // Remove the item from the cart object
     ACF.cartManager.removeFromCart(lineId);
-    // Remove the item in the visual cart
-    this.querySelector('.' + lineClass).remove();
-    // If there are no more products, set the empty message.
-    if (!Object.keys(ACF.cart.products).length) {
-      this._emptyMsg();
-    }
   }
 
   /**
@@ -115,21 +109,29 @@
   }
 
   /**
+   * Helper - remove the cart for rebuilding or replacement.
+   * @TODO: replace this with the wrapper
+   */
+  _removeCart() {
+    Array.from(this.children).forEach(function (element) {
+      if (element) {
+        element.remove();
+      }
+    });
+  }
+
+  /**
    * Helper - build the empty cart message
    *
    * @TODO make this a configurable message from the component config
    */
   _emptyMsg() {
-    let cart = this.querySelector('ul');
-    if (cart) {
-      cart.remove();
-    }
     let message = document.createElement("h4");
     message.textContent = "You don't have anything in your cart right now.";
     let cartList = document.createElement("div");
     cartList.className = "empty-msg";
     cartList.appendChild(message);
-    this.appendChild(cartList);
+    return cartList;
   }
 
  }

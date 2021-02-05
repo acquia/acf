@@ -1,9 +1,10 @@
 mini-cart li {
   list-style: none;
   margin: 0;
+  font-size:90%;
 }
 
-mini-cart article {
+mini-cart article:first-of-type {
   transform: scale(0.8);
   max-width: 20rem;
 }
@@ -14,4 +15,9 @@ mini-cart .coh-heading {
 
 mini-cart .hide-mini-cart {
   display: none;
+}
+
+mini-cart select {
+  max-width: 3rem;
+  margin-left: -0.45rem;
 }

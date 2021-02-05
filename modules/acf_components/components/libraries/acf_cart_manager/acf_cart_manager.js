@@ -107,12 +107,15 @@ class acfCartManager {
    */
   removeFromCart(lineId) {
     this.get();
-    let id = ACF.cart.products[lineId].id;
-    delete ACF.cart.products[lineId];
-    // Trigger event for other components to listen to.
-    ACF.events.emit('acfRemoveFromCart', id);
-    // Update or empty the cart.
-    Object.keys(ACF.cart.products).length ? this.update() : this.empty();
+    let lineItem = ACF.cart.products[lineId];
+    if (lineItem) {
+      let id = lineItem.id;
+      delete ACF.cart.products[lineId];
+      // Trigger event for other components to listen to.
+      ACF.events.emit('acfRemoveFromCart', id);
+      // Update or empty the cart.
+      Object.keys(ACF.cart.products).length ? this.update() : this.empty();
+    }
   }
 
   /**
