@@ -1,0 +1,12 @@
+name: ACF Product Search
+type: module
+description: Adds search and facets for products.
+core_version_requirement: ^8.8 || ^9
+package: Acquia Commerce Framework
+dependencies:
+  - acf_product
+  - acf_product_search_server
+  - facets
+  - facets_summary
+  - search_api
+  - search_api_db

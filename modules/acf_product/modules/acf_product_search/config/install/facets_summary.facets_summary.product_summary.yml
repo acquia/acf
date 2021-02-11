@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.product
+    - views.view.product_search
+  module:
+    - search_api
+id: product_summary
+name: 'Product summary'
+facets:
+  product_brand:
+    checked: true
+    label: Brand
+    separator: ', '
+    weight: 0
+    show_count: false
+  product_category:
+    checked: true
+    label: Category
+    separator: ', '
+    weight: 0
+    show_count: false
+  product_color:
+    checked: true
+    label: Color
+    separator: ', '
+    weight: 0
+    show_count: false
+  product_material:
+    checked: true
+    label: Material
+    separator: ', '
+    weight: 0
+    show_count: false
+  product_sale:
+    checked: true
+    label: Sale
+    separator: ', '
+    weight: 0
+    show_count: false
+facet_source_id: 'search_api:views_block__product_search__block_1'
+processor_configs: {  }

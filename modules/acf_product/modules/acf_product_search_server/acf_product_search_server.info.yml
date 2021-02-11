@@ -1,0 +1,9 @@
+name: ACF Product Search Server
+type: module
+description: Adds a server for ACF Product Search.
+core_version_requirement: ^8.8 || ^9
+package: Acquia Commerce Framework
+dependencies:
+  - acf_product
+  - search_api
+  - search_api_db

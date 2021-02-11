@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Contains acf_product_search_server.install.
+ */
+
+use Drupal\Core\Config\FileStorage;
+use Drupal\search_api\Entity\Server;
+
+/**
+ * Implements hook_install().
+ */
+function acf_product_search_server_install() {
+  // The database server is optional configuration, to be installed only if
+  // Search API DB is present. For some reason, it's not installed during a
+  // normal site install, so create it now if it doesn't already exist.
+  $server = Server::load('database');
+  $module_handler = \Drupal::moduleHandler();
+  if (empty($server) && $module_handler->moduleExists('search_api_db')) {
+    $config_path = drupal_get_path('module', 'acf_product_search')
+      . '/config/optional';
+    $source = new FileStorage($config_path);
+    $config_storage = \Drupal::service('config.storage');
+    $config_storage->write('search_api.server.database',
+      $source->read('search_api.server.database'));
+  }
+
+}

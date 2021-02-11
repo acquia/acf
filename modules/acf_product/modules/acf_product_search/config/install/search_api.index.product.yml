@@ -1,0 +1,87 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_brand
+    - field.storage.node.field_product_type
+    - field.storage.node.field_product_color
+    - field.storage.node.field_product_material
+    - field.storage.node.field_product_on_sale
+    - search_api.server.database
+  module:
+    - node
+    - search_api
+id: product
+name: 'Product search'
+description: ''
+read_only: false
+field_settings:
+  field_product_brand:
+    label: Brand
+    datasource_id: 'entity:node'
+    property_path: field_product_brand
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_product_brand
+  field_product_color:
+    label: Color
+    datasource_id: 'entity:node'
+    property_path: field_product_color
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_product_color
+  field_product_material:
+    label: Material
+    datasource_id: 'entity:node'
+    property_path: field_product_material
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_product_material
+  field_product_on_sale:
+    label: 'On sale'
+    datasource_id: 'entity:node'
+    property_path: field_product_on_sale
+    type: boolean
+    dependencies:
+      config:
+        - field.storage.node.field_product_on_sale
+  field_product_type:
+    label: Category
+    datasource_id: 'entity:node'
+    property_path: field_product_type
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_product_type
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - product
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: database
