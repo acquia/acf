@@ -13,12 +13,7 @@ ACF is an open-source reference architecture that allows Drupal developers, Java
 [![](http://img.youtube.com/vi/OWGu1FSzWLU/0.jpg)](http://www.youtube.com/watch?v=OWGu1FSzWLU "Acquia Commerce Framework Demo")
 
 ## Module Listing
-- acf_blocks - Decoupled blocks for direct user iteraction with ecommerce APIs
-- acf_catalog - Back end integration tool for importing "virtual catalogs" from ecommerce APIs
-- acf_demo - Drupal-based technical implementation of ACF in practice
--- acf_demo_cart - Decoupled cart for calculating and displaying live data (uses acf_blocks)
--- acf_demo_product - Creates a product content type to be used for product display
--- acf_demo_api - Provides a mock API to be used for the demo (uses acf_catalog)
+
 
 ## Roadmap
 No defined roadmap at this time. See the [TODO.md](TODO.md) docs in the module folders for a list of ideas and thoughts. Feel free to contribute back!
@@ -36,7 +31,7 @@ See also the list of [contributors](https://github.com/acquia/acf/blob/master/do
 
 ## Copyright and license
 
-Copyright © 2019 Acquia Inc.
+Copyright © 2021 Acquia Inc.
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
