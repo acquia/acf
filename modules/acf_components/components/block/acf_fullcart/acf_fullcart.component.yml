@@ -1,5 +1,5 @@
 name: ACF Full cart
-description: 'Provides a full cart component to view the contents of the cart.'
+description: 'Provides a full cart component to view the contents of the current user cart.'
 css:
   acf_fullcart.css: {}
 js:
