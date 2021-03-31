@@ -78,6 +78,7 @@
     button.textContent = 'X';
     button.setAttribute('data-event', event);
     button.setAttribute('data-arg1', lineId);
+    button.setAttribute('data-classes', 'acf-remove-button');
     return button;
   }
 
