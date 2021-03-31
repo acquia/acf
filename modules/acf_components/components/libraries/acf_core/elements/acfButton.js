@@ -12,6 +12,7 @@ class acfButton extends HTMLButtonElement {
   constructor() {
     super();
     this.classList.add('coh-button', 'coh-style-button');
+    this.getAttribute('data-classes') && this.classList.add(this.getAttribute('data-classes'));
     this.addEventListener('click', () => this.buttonClick());
   }
 
