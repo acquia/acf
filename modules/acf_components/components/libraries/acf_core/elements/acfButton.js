@@ -8,12 +8,23 @@
  *  - data-arg2: optional second argument
  */
 
-class acfButton extends HTMLButtonElement {
+ class acfButton extends HTMLButtonElement {
   constructor() {
     super();
-    this.classList.add('coh-button', 'coh-style-button');
-    this.getAttribute('data-classes') && this.classList.add(this.getAttribute('data-classes'));
-    this.addEventListener('click', () => this.buttonClick());
+    this.processed = false;
+  }
+
+  /**
+   * We need to process the data attributes in connectedCallback since they may
+   *   not be ready yet in the constructor.
+   */
+  connectedCallback() {
+    if (!this.processed) {
+      this.classList.add('coh-button', 'coh-style-button');
+      this.getAttribute('data-classes') && this.classList.add(this.getAttribute('data-classes'));
+      this.addEventListener('click', () => this.buttonClick());
+      this.processed = true;
+    }
   }
 
   buttonClick() {
