@@ -16,3 +16,10 @@ ACF.cartManager = new acfCartManager;
 
 // Instantiate the cart.
 ACF.cartManager.get();
+
+// Temporary fix for the demo - event listener for checkout buttons. These will
+//  this will be added as a component later.
+let checkoutBtn = document.querySelector('a.coh-style-checkout')
+if (checkoutBtn) {
+  checkoutBtn.addEventListener('click', () => ACF.cartManager.empty());
+}
