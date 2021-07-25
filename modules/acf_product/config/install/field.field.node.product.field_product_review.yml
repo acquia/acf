@@ -2,18 +2,18 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.comment
+    - field.storage.node.field_product_review
     - node.type.product
   module:
     - comment
-id: node.product.comment
-field_name: comment
+id: node.product.field_product_review
+field_name: field_product_review
 entity_type: node
 bundle: product
-label: Comments
+label: Reviews
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     status: 2

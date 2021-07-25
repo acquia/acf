@@ -4,7 +4,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.list
     - field.field.node.product.body
-    - field.field.node.product.comment
     - field.field.node.product.field_product_brand
     - field.field.node.product.field_product_color
     - field.field.node.product.field_product_image
@@ -15,12 +14,14 @@ dependencies:
     - field.field.node.product.field_product_price_original
     - field.field.node.product.field_product_price_sale
     - field.field.node.product.field_product_rating
+    - field.field.node.product.field_product_review
     - field.field.node.product.field_product_sku
     - field.field.node.product.field_product_tags
     - field.field.node.product.field_product_type
     - field.field.node.product.field_product_weight
     - node.type.product
   module:
+    - image
     - options
     - user
 id: node.product.list
@@ -36,13 +37,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_product_image:
-    type: entity_reference_entity_view
+    type: image
     weight: 0
     region: content
     label: hidden
     settings:
-      view_mode: thumbnail
-      link: false
+      image_link: ''
+      image_style: ''
     third_party_settings: {  }
   field_product_on_sale:
     type: boolean
@@ -85,16 +86,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
 hidden:
-  addtoany: true
   body: true
-  comment: true
   field_product_brand: true
   field_product_image_more: true
   field_product_material: true
   field_product_model: true
   field_product_rating: true
+  field_product_review: true
   field_product_tags: true
   field_product_type: true
   field_product_weight: true
   links: true
-  search_api_excerpt: true

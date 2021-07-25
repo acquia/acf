@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - text
+id: comment.field_product_review
+field_name: field_product_review
+entity_type: comment
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

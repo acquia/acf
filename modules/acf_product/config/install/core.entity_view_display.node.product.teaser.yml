@@ -4,7 +4,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.product.body
-    - field.field.node.product.comment
     - field.field.node.product.field_product_brand
     - field.field.node.product.field_product_color
     - field.field.node.product.field_product_image
@@ -15,11 +14,14 @@ dependencies:
     - field.field.node.product.field_product_price_original
     - field.field.node.product.field_product_price_sale
     - field.field.node.product.field_product_rating
+    - field.field.node.product.field_product_review
     - field.field.node.product.field_product_sku
     - field.field.node.product.field_product_tags
+    - field.field.node.product.field_product_type
     - field.field.node.product.field_product_weight
     - node.type.product
   module:
+    - image
     - text
     - user
 id: node.product.teaser
@@ -35,13 +37,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_product_image:
-    type: entity_reference_entity_view
+    type: image
     weight: 1
     region: content
     label: hidden
     settings:
-      link: true
-      view_mode: default
+      image_style: ''
+      image_link: ''
     third_party_settings: {  }
   field_product_price_original:
     type: number_decimal
@@ -71,7 +73,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  comment: true
   field_product_brand: true
   field_product_color: true
   field_product_image_more: true
@@ -79,6 +80,8 @@ hidden:
   field_product_model: true
   field_product_on_sale: true
   field_product_rating: true
+  field_product_review: true
   field_product_sku: true
   field_product_tags: true
+  field_product_type: true
   field_product_weight: true

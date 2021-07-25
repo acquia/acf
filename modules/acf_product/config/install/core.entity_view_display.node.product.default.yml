@@ -2,9 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment.default
+    - core.entity_view_display.comment.product.default
     - field.field.node.product.body
-    - field.field.node.product.comment
     - field.field.node.product.field_product_brand
     - field.field.node.product.field_product_color
     - field.field.node.product.field_product_image
@@ -15,6 +14,7 @@ dependencies:
     - field.field.node.product.field_product_price_original
     - field.field.node.product.field_product_price_sale
     - field.field.node.product.field_product_rating
+    - field.field.node.product.field_product_review
     - field.field.node.product.field_product_sku
     - field.field.node.product.field_product_tags
     - field.field.node.product.field_product_type
@@ -22,6 +22,7 @@ dependencies:
     - node.type.product
   module:
     - comment
+    - image
     - options
     - text
     - user
@@ -37,15 +38,6 @@ content:
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
-  comment:
-    weight: 15
-    label: hidden
-    settings:
-      view_mode: default
-      pager_id: 0
-    third_party_settings: {  }
-    type: comment_default
-    region: content
   field_product_brand:
     type: list_default
     weight: 3
@@ -61,22 +53,22 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_product_image:
-    type: entity_reference_entity_view
+    type: image
     weight: 9
     region: content
     label: hidden
     settings:
-      link: true
-      view_mode: default
+      image_link: ''
+      image_style: ''
     third_party_settings: {  }
   field_product_image_more:
-    type: entity_reference_entity_view
+    type: image
     weight: 10
     region: content
     label: hidden
     settings:
-      link: true
-      view_mode: default
+      image_link: ''
+      image_style: ''
     third_party_settings: {  }
   field_product_material:
     type: list_default
@@ -123,6 +115,15 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+  field_product_review:
+    weight: 16
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
   field_product_sku:
     type: string
     weight: 5
