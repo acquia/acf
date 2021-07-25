@@ -2,13 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.list
-    - field.storage.media.field_media_image
     - field.storage.node.body
     - field.storage.node.field_product_brand
     - field.storage.node.field_product_color
     - field.storage.node.field_product_image
-    - field.storage.node.field_product_image_more
     - field.storage.node.field_product_material
     - field.storage.node.field_product_model
     - field.storage.node.field_product_on_sale
@@ -22,7 +19,6 @@ dependencies:
     - node.type.product
   module:
     - image
-    - media
     - node
     - options
     - rest
@@ -290,14 +286,14 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_media_image:
-          id: field_media_image
-          table: media__field_media_image
-          field: field_media_image
-          relationship: field_product_image
+        field_product_image:
+          id: field_product_image
+          table: node__field_product_image
+          field: field_product_image
+          relationship: none
           group_type: group
-          admin_label: ''
-          label: image_url
+          admin_label: 'Content: Primary image (image_url)'
+          label: ''
           exclude: false
           alter:
             alter_text: false
@@ -341,7 +337,9 @@ display:
           click_sort_column: target_id
           type: image_url
           settings:
+            url_type: '0'
             image_style: thumbnail
+            image_link: ''
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -353,14 +351,14 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_product_image:
-          id: field_product_image
+        field_product_image_1:
+          id: field_product_image_1
           table: node__field_product_image
           field: field_product_image
           relationship: none
           group_type: group
-          admin_label: ''
-          label: image_html
+          admin_label: 'Content: Primary image (image_html)'
+          label: 'image_html'
           exclude: false
           alter:
             alter_text: false
@@ -402,11 +400,11 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: media_thumbnail
+          type: image
           settings:
             image_style: thumbnail
             image_link: ''
-          group_column: target_id
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 5
@@ -600,70 +598,6 @@ display:
           group_columns: {  }
           group_rows: true
           delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_product_image_more:
-          id: field_product_image_more
-          table: node__field_product_image_more
-          field: field_product_image_more
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: more_images
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: media_thumbnail
-          settings:
-            image_style: thumbnail
-            image_link: ''
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 5
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
@@ -1112,57 +1046,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        rendered_entity:
-          id: rendered_entity
-          table: node
-          field: rendered_entity
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: html
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          view_mode: list
-          entity_type: node
-          plugin_id: rendered_entity
       filters:
         status:
           value: '1'
@@ -1223,16 +1106,7 @@ display:
       header: {  }
       footer: {  }
       empty: {  }
-      relationships:
-        field_product_image:
-          id: field_product_image
-          table: node__field_product_image
-          field: field_product_image
-          relationship: none
-          group_type: group
-          admin_label: 'Main image media reference'
-          required: false
-          plugin_id: standard
+      relationships: {  }
       arguments:
         nid:
           id: nid
@@ -1289,14 +1163,10 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:core.entity_view_display.node.product.default'
-        - 'config:core.entity_view_display.node.product.teaser'
-        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_product_brand'
         - 'config:field.storage.node.field_product_color'
         - 'config:field.storage.node.field_product_image'
-        - 'config:field.storage.node.field_product_image_more'
         - 'config:field.storage.node.field_product_material'
         - 'config:field.storage.node.field_product_model'
         - 'config:field.storage.node.field_product_on_sale'
@@ -1338,10 +1208,10 @@ display:
             field_product_sku:
               alias: sku
               raw_output: false
-            field_media_image:
+            field_product_image:
               alias: image_url
               raw_output: false
-            field_product_image:
+            field_product_image_1:
               alias: image_html
               raw_output: false
             field_product_brand:
@@ -1352,9 +1222,6 @@ display:
               raw_output: false
             field_product_on_sale:
               alias: on_sale
-              raw_output: false
-            field_product_image_more:
-              alias: image_more
               raw_output: false
             field_product_price_sale:
               alias: price_sale
@@ -1377,8 +1244,6 @@ display:
             body:
               alias: description
               raw_output: false
-            rendered_entity:
-              alias: line_html
     cache_metadata:
       max-age: -1
       contexts:
@@ -1389,14 +1254,10 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:core.entity_view_display.node.product.default'
-        - 'config:core.entity_view_display.node.product.teaser'
-        - 'config:field.storage.media.field_media_image'
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_product_brand'
         - 'config:field.storage.node.field_product_color'
         - 'config:field.storage.node.field_product_image'
-        - 'config:field.storage.node.field_product_image_more'
         - 'config:field.storage.node.field_product_material'
         - 'config:field.storage.node.field_product_model'
         - 'config:field.storage.node.field_product_on_sale'
