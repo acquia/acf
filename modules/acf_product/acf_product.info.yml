@@ -6,7 +6,6 @@ package: Acquia Commerce Framework
 dependencies:
   - comment
   - image
-  - media
   - node
   - options
   - rest
