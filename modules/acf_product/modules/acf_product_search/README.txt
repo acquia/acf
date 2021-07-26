@@ -21,7 +21,6 @@ REQUIREMENTS
 This module requires the following modules:
 
  * ACF Product (https://github.com/acquia/acf)
- * ACF Product Search Server (https://github.com/acquia/acf)
  * Facets (https://www.drupal.org/project/facets)
  * Facets Summary (https://www.drupal.org/project/facets)
  * Search API (https://www.drupal.org/project/search_api)

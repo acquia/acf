@@ -5,7 +5,6 @@ core_version_requirement: ^8.8 || ^9
 package: Acquia Commerce Framework
 dependencies:
   - acf_product
-  - acf_product_search_server
   - facets
   - facets_summary
   - search_api

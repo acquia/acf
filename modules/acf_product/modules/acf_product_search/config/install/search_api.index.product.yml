@@ -1,16 +1,16 @@
 langcode: en
 status: true
 dependencies:
-  config:
-    - field.storage.node.field_product_brand
-    - field.storage.node.field_product_type
-    - field.storage.node.field_product_color
-    - field.storage.node.field_product_material
-    - field.storage.node.field_product_on_sale
-    - search_api.server.database
   module:
     - node
     - search_api
+  config:
+    - field.storage.node.field_product_brand
+    - field.storage.node.field_product_color
+    - field.storage.node.field_product_material
+    - field.storage.node.field_product_on_sale
+    - field.storage.node.field_product_type
+    - search_api.server.product_search_server
 id: product
 name: 'Product search'
 description: ''
@@ -78,10 +78,11 @@ processor_settings:
   aggregated_field: {  }
   language_with_fallback: {  }
   rendered_item: {  }
+  solr_date_range: {  }
 tracker_settings:
   default:
     indexing_order: fifo
 options:
   index_directly: true
   cron_limit: 50
-server: database
+server: product_search_server
