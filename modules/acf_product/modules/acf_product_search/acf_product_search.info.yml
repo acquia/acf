@@ -6,6 +6,5 @@ package: Acquia Commerce Framework
 dependencies:
   - acf_product
   - facets
-  - facets_summary
   - search_api
   - search_api_db
