@@ -3,18 +3,14 @@ status: true
 dependencies:
   module:
     - node
-    - options
+    - taxonomy
 id: node.field_product_brand
 field_name: field_product_brand
 entity_type: node
-type: list_string
+type: entity_reference
 settings:
-  allowed_values:
-    -
-      value: 'Brand Name'
-      label: 'Brand Name'
-  allowed_values_function: ''
-module: options
+  target_type: taxonomy_term
+module: core
 locked: false
 cardinality: 1
 translatable: true
