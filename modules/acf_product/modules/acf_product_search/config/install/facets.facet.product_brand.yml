@@ -40,6 +40,11 @@ processor_configs:
       sort: 40
     settings:
       sort: ASC
+  translate_entity:
+    processor_id: translate_entity
+    weights:
+      build: 5
+    settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler
     weights:
