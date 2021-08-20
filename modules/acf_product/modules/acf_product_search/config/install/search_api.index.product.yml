@@ -1,16 +1,17 @@
 langcode: en
 status: true
 dependencies:
-  module:
-    - node
-    - search_api
   config:
     - field.storage.node.field_product_brand
+    - field.storage.node.field_product_type
     - field.storage.node.field_product_color
     - field.storage.node.field_product_material
     - field.storage.node.field_product_on_sale
-    - field.storage.node.field_product_type
+    - field.storage.node.field_product_tags
     - search_api.server.product_search_server
+  module:
+    - node
+    - search_api
 id: product
 name: 'Product search'
 description: ''
@@ -48,6 +49,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_product_on_sale
+  field_product_tags:
+    label: Tags
+    datasource_id: 'entity:node'
+    property_path: field_product_tags
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_product_tags
   field_product_type:
     label: Category
     datasource_id: 'entity:node'
@@ -78,7 +87,6 @@ processor_settings:
   aggregated_field: {  }
   language_with_fallback: {  }
   rendered_item: {  }
-  solr_date_range: {  }
 tracker_settings:
   default:
     indexing_order: fifo
