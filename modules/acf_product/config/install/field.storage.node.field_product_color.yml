@@ -23,6 +23,9 @@ settings:
       value: Orange
       label: Orange
     -
+      value: Brown
+      label: Brown
+    -
       value: Yellow
       label: Yellow
     -
