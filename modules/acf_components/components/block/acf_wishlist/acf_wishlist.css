@@ -3,6 +3,6 @@ wish-list li {
   margin: 0;
 }
 
-.hide-mini-cart {
+wish-list .hide-mini-cart {
   display:none;
 }
