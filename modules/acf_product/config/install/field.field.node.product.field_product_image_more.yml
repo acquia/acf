@@ -5,7 +5,14 @@ dependencies:
     - field.storage.node.field_product_image_more
     - node.type.product
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      file: file
+      alt: '0'
+      title: '0'
 id: node.product.field_product_image_more
 field_name: field_product_image_more
 entity_type: node
@@ -13,10 +20,12 @@ bundle: product
 label: 'Additional images'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
+  handler: 'default:file'
+  handler_settings: {  }
   file_directory: '[date:custom:Y]-[date:custom:m]'
   file_extensions: 'png gif jpg jpeg'
   max_filesize: ''
@@ -32,6 +41,4 @@ settings:
     title: ''
     width: null
     height: null
-  handler: 'default:file'
-  handler_settings: {  }
 field_type: image
