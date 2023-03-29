@@ -1,7 +1,7 @@
 name: ACF Product
 type: module
 description: Creates a product content type and adds optional template.
-core_version_requirement: ^8.8 || ^9
+core_version_requirement: ^9.3 || ^10
 package: Acquia Commerce Framework
 dependencies:
   - comment
