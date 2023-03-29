@@ -10,7 +10,8 @@
  */
 function acf_product_uninstall() {
   // Remove installed acf_product configuration
-  $config_path = drupal_get_path('module', 'acf_product') . '/config/install';
+  $config_path = \Drupal::service('extension.list.module')
+    ->getPath('acf_product') . '/config/install';
   $files = file_scan_directory($config_path, '/.*\.yml$/');
   $configs = array_map(function ($file) {
     return $file->name;
