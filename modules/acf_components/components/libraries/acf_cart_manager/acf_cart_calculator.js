@@ -39,7 +39,9 @@ class acfCartCalculator {
     for (let lineId of Object.keys(products)) {
       let id = products[lineId].id;
       let product = await ACF.cartManager.getProduct(id);
-      let cost = (product.price_sale > 0) ? product.price_sale : product.price;
+      let price = +product.price.replace(/,/g, "");
+      let sale_price = +product.price_sale.replace(/,/g, "");
+      let cost = (sale_price > 0) ? sale_price : price;
       let qty = products[lineId].qty || 1;
       subtotal += parseFloat(cost * qty);
     }
