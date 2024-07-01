@@ -7,3 +7,6 @@ js:
 dependencies:
   - component/acf_core
   - component/acf_fullcart
+props:
+  type: object
+  properties: {}

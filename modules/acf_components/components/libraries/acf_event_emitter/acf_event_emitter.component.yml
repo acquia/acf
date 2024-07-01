@@ -3,3 +3,6 @@ description: 'Provides library for managing ACF events'
 type: 'library'
 js:
   acf_event_emitter.js: {}
+props:
+  type: object
+  properties: {}
