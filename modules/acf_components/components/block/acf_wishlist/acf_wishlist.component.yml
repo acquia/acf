@@ -6,3 +6,6 @@ js:
   acf_wishlist.js: {}
 dependencies:
   - component/acf_core
+props:
+  type: object
+  properties: {}

@@ -8,3 +8,6 @@ js:
 # We will default to the acf_demo_core plugin, but this can be overridden.
 dependencies:
   - component/acf_demo_core
+props:
+  type: object
+  properties: {}

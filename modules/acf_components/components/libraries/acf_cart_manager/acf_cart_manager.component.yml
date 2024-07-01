@@ -4,3 +4,6 @@ type: 'library'
 js:
   acf_cart_manager.js: {}
   acf_cart_calculator.js: {}
+props:
+  type: object
+  properties: {}

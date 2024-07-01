@@ -8,3 +8,6 @@ dependencies:
   - component/acf_storage
   - component/acf_cart_manager
   - component/acf_event_emitter
+props:
+  type: object
+  properties: {}

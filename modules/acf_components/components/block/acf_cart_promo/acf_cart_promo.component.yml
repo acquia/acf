@@ -6,3 +6,6 @@ js:
   acf_cart_promo.js: {}
 dependencies:
   - component/acf_core
+props:
+  type: object
+  properties: {}

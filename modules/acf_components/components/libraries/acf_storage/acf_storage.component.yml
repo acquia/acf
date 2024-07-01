@@ -3,3 +3,6 @@ description: 'Provides library for retreiving API data and caching it in localst
 type: 'library'
 js:
   acf_storage.js: {}
+props:
+  type: object
+  properties: {}
