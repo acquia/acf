@@ -8,7 +8,7 @@
  *  - data-arg2: optional second argument
  */
 
- class acfButton extends HTMLButtonElement {
+class acfButton extends HTMLElement {
   constructor() {
     super();
     this.processed = false;
@@ -20,9 +20,18 @@
    */
   connectedCallback() {
     if (!this.processed) {
-      this.classList.add('coh-button', 'coh-style-button');
-      this.getAttribute('data-classes') && this.classList.add(this.getAttribute('data-classes'));
-      this.addEventListener('click', () => this.buttonClick());
+      this.button = document.createElement('button');
+      this.button.classList.add('coh-button', 'coh-style-button');
+
+      // Add extra classes from data-classes (split by space)
+      const extraClasses = this.getAttribute("data-classes");
+      if (extraClasses) {
+        extraClasses.split(" ").forEach(cls => this.button.classList.add(cls));
+      }
+      
+      this.button.innerHTML = this.getAttribute('buttonText')
+      this.button.addEventListener('click', () => this.buttonClick());
+      this.appendChild(this.button);
       this.processed = true;
     }
   }
@@ -38,4 +47,4 @@
 
 }
 
-customElements.define('acf-button', acfButton, { extends: 'button' });
+customElements.define('acf-button', acfButton);
