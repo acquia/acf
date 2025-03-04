@@ -44,7 +44,7 @@
       // Attach the line item to the cart.
       cartList.appendChild(lineItem);
       // Set the default quantity and provide an onchange event listener.
-      let select = lineItem.querySelector('[name="quantity"]');
+      let select = lineItem.querySelector('[name="quantity"] select');
       select.value = lineIdObj.qty;
       select.addEventListener('change', (event) => {
         ACF.cartManager.updateCartProduct(lineId, event.target.value, lineIdObj.attr);
@@ -74,12 +74,12 @@
     // Register a one time event to remove this line item from the cart.
     ACF.events.once(event, this.removeLineItem.bind(this));
     // Build the button.
-    let button = document.createElement('button', { is: 'acf-button' });
-    button.textContent = 'X';
-    button.setAttribute('data-event', event);
-    button.setAttribute('data-arg1', lineId);
-    button.setAttribute('data-classes', 'acf-remove-button');
-    return button;
+    let acfbutton = document.createElement('acf-button');
+    acfbutton.setAttribute('buttonText', 'X');
+    acfbutton.setAttribute('data-event', event);
+    acfbutton.setAttribute('data-arg1', lineId);
+    acfbutton.setAttribute('data-classes', 'acf-remove-button');
+    return acfbutton;
   }
 
   /**
