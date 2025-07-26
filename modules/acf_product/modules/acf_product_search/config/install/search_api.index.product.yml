@@ -7,7 +7,8 @@ dependencies:
     - field.storage.node.field_product_color
     - field.storage.node.field_product_material
     - field.storage.node.field_product_on_sale
-    - search_api.server.database
+    - field.storage.node.field_product_tags
+    - search_api.server.product_search_server
   module:
     - node
     - search_api
@@ -48,6 +49,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_product_on_sale
+  field_product_tags:
+    label: Tags
+    datasource_id: 'entity:node'
+    property_path: field_product_tags
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_product_tags
   field_product_type:
     label: Category
     datasource_id: 'entity:node'
@@ -84,4 +93,4 @@ tracker_settings:
 options:
   index_directly: true
   cron_limit: 50
-server: database
+server: product_search_server

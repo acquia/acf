@@ -6,13 +6,13 @@ dependencies:
     - views.view.product_search
   module:
     - search_api
-id: product_brand
-name: 'Product brand'
-url_alias: brand
+id: product_tags
+name: 'Product tags'
+url_alias: tags
 weight: 0
 min_count: 1
 show_only_one_result: false
-field_identifier: field_product_brand
+field_identifier: field_product_tags
 facet_source_id: 'search_api:views_block__product_search__block_1'
 widget:
   type: links
