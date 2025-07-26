@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.product_comment
+    - field.storage.comment.field_product_comment_body
+  module:
+    - text
+id: comment.product_comment.field_product_comment_body
+field_name: field_product_comment_body
+entity_type: comment
+bundle: product_comment
+label: Comment
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

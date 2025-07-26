@@ -2,15 +2,15 @@ langcode: en
 status: true
 dependencies:
   module:
+    - comment
     - node
-    - taxonomy
-id: node.field_product_brand
-field_name: field_product_brand
+id: node.field_product_review
+field_name: field_product_review
 entity_type: node
-type: entity_reference
+type: comment
 settings:
-  target_type: taxonomy_term
-module: core
+  comment_type: product_comment
+module: comment
 locked: false
 cardinality: 1
 translatable: true

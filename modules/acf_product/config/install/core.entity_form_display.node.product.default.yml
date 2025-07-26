@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - field.field.node.product.body
-    - field.field.node.product.comment
     - field.field.node.product.field_product_brand
     - field.field.node.product.field_product_color
     - field.field.node.product.field_product_image
@@ -14,13 +13,14 @@ dependencies:
     - field.field.node.product.field_product_price_original
     - field.field.node.product.field_product_price_sale
     - field.field.node.product.field_product_rating
+    - field.field.node.product.field_product_review
     - field.field.node.product.field_product_sku
     - field.field.node.product.field_product_tags
     - field.field.node.product.field_product_type
     - field.field.node.product.field_product_weight
     - node.type.product
   module:
-    - comment
+    - media_library
     - path
     - text
 id: node.product.default
@@ -38,12 +38,6 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  comment:
-    weight: 20
-    settings: {  }
-    third_party_settings: {  }
-    type: comment_default
-    region: content
   field_product_brand:
     type: options_select
     weight: 4
@@ -57,16 +51,18 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_product_image:
-    type: options_select
+    type: media_library_widget
     weight: 6
     region: content
-    settings: {  }
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_product_image_more:
-    type: options_select
+    type: media_library_widget
     weight: 7
     region: content
-    settings: {  }
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_product_material:
     type: options_select
@@ -150,24 +146,24 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 16
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 19
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 17
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -184,4 +180,5 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_product_review: true
   uid: true

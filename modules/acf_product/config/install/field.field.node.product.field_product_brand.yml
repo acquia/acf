@@ -4,17 +4,25 @@ dependencies:
   config:
     - field.storage.node.field_product_brand
     - node.type.product
-  module:
-    - options
+    - taxonomy.vocabulary.product_brand
 id: node.product.field_product_brand
 field_name: field_product_brand
 entity_type: node
 bundle: product
 label: Brand
 description: ''
-required: false
-translatable: false
+required: true
+translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: list_string
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_type: product_brand
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

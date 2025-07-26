@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+id: product_image
+label: 'Product image'
+description: 'Use local images for reusable media.'
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_product_image
+field_map:
+  name: name

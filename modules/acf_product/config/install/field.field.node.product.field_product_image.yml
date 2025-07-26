@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_product_image
-    - media.type.image
+    - media.type.product_image
     - node.type.product
 id: node.product.field_product_image
 field_name: field_product_image
@@ -19,9 +19,10 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      image: image
+      product_image: product_image
     sort:
       field: _none
+      direction: ASC
     auto_create: true
-    auto_create_bundle: ''
+    auto_create_bundle: image
 field_type: entity_reference

@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.list
-    - field.storage.media.field_media_image
+    - field.storage.media.field_product_image
     - field.storage.node.body
     - field.storage.node.field_product_brand
     - field.storage.node.field_product_color
@@ -1391,7 +1391,7 @@ display:
       tags:
         - 'config:core.entity_view_display.node.product.default'
         - 'config:core.entity_view_display.node.product.teaser'
-        - 'config:field.storage.media.field_media_image'
+        - 'config:field.storage.media.field_product_image'
         - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_product_brand'
         - 'config:field.storage.node.field_product_color'
