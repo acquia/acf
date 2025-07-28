@@ -18,55 +18,57 @@
  *  text for the dropdown. Create a new custom element for this.
  */
 
-class acfSelect extends HTMLSelectElement {
+class acfSelect extends HTMLElement {
   constructor() {
     super();
     this.processed = false;
   }
 
-  /**
-   * We need to process the data attributes in connectedCallback since they may
-   *   not be ready yet in the constructor.
-   */
   connectedCallback() {
     if (!this.processed) {
-      this.classList.add('coh-select', 'coh-style-select', 'form-select');
-      this.getAttribute('data-name') && this.setAttribute('name', this.getAttribute('data-name'));
-      this.getAttribute('data-classes') && this.classList.add(this.getAttribute('data-classes'));
-      this.getAttribute('data-multiple') && this.setAttribute('multiple');
-      this.getAttribute('data-size') && this.setAttribute('size', this.getAttribute('data-multiple'));
-      this.getAttribute('data-disabled') && this.setAttribute('disabled');
-      this.getAttribute('data-required') && this.setAttribute('required');
-      this.buildOptions();
+      // Create actual <select> element inside the shadow DOM
+      this.select = document.createElement("select");
+      this.select.classList.add("coh-select", "coh-style-select", "form-select");
+
+      // Add extra classes from data-classes (split by space)
+      const extraClasses = this.getAttribute("data-classes");
+      if (extraClasses) {
+        extraClasses.split(" ").forEach(cls => this.select.classList.add(cls));
+      }
+
+      // Set attributes based on data-attributes
+      this.getAttribute("data-name") && this.select.setAttribute("name", this.getAttribute("data-name"));
+      this.getAttribute("data-multiple") === "true" && this.select.setAttribute("multiple", "multiple");
+      this.getAttribute("data-size") && this.select.setAttribute("size", this.getAttribute("data-size"));
+      this.getAttribute("data-disabled") === "true" && this.select.setAttribute("disabled", "disabled");
+      this.getAttribute("data-required") === "true" && this.select.setAttribute("required", "required");
+
+      this.buildOptions(); // Add options to select
+
+      this.appendChild(this.select);
       this.processed = true;
     }
   }
 
-  /**
-   * Simple function to build the options from the data attributes. This assumes
-   *  that the value is a JSON stringified object of key/value pairs.
-   */
   buildOptions() {
-    let optionString = this.getAttribute('data-options') || this._defaultOptions();
+    let optionString = this.getAttribute("data-options") || this._defaultOptions();
     let options = JSON.parse(optionString);
+
     Object.entries(options).forEach(([key, value]) => {
-      let option = document.createElement('option');
-      option.setAttribute('value', key);
+      let option = document.createElement("option");
+      option.setAttribute("value", key);
       option.innerHTML = value;
-      this.appendChild(option);
+      this.select.appendChild(option);
     });
   }
 
-  /**
-   * Generates a default list of numbers if none is provided.
-   */
   _defaultOptions() {
     let options = {};
-    for (let i = 1; i < 11; i++) {
+    for (let i = 1; i <= 10; i++) {
       options[i] = i;
     }
     return JSON.stringify(options);
   }
 }
 
-customElements.define('acf-select', acfSelect, { extends: 'select' });
+customElements.define("acf-select", acfSelect);
