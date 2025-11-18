@@ -14,3 +14,4 @@ dependencies:
   - taxonomy
   - text
   - user
+  - acquia_cms_common
