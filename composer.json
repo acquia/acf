@@ -10,5 +10,7 @@
             "role": "Maintainer"
         }
     ],
-    "require": {}
+    "require": {
+      "drupal/acquia_cms_common": "^3.3.0"
+    }
 }
