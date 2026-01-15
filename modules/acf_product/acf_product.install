@@ -12,7 +12,7 @@ function acf_product_uninstall() {
   // Remove installed acf_product configuration
   $config_path = \Drupal::service('extension.list.module')
     ->getPath('acf_product') . '/config/install';
-  $files = file_scan_directory($config_path, '/.*\.yml$/');
+  $files = \Drupal::service('file_system')->scanDirectory($config_path, '/.*\.yml$/');
   $configs = array_map(function ($file) {
     return $file->name;
   }, $files);

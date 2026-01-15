@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.list
-    - field.field.node.product.body
     - field.field.node.product.field_product_brand
     - field.field.node.product.field_product_color
+    - field.field.node.product.field_product_description
     - field.field.node.product.field_product_image
     - field.field.node.product.field_product_image_more
     - field.field.node.product.field_product_material
@@ -86,8 +86,8 @@ content:
     region: content
 hidden:
   addtoany: true
-  body: true
   field_product_brand: true
+  field_product_description: true
   field_product_image_more: true
   field_product_material: true
   field_product_model: true

@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_display.comment.product_comment.default
-    - field.field.node.product.body
     - field.field.node.product.field_product_brand
     - field.field.node.product.field_product_color
+    - field.field.node.product.field_product_description
     - field.field.node.product.field_product_image
     - field.field.node.product.field_product_image_more
     - field.field.node.product.field_product_material
@@ -23,6 +23,7 @@ dependencies:
   module:
     - comment
     - options
+    - taxonomy
     - text
     - user
 id: node.product.default
@@ -30,26 +31,26 @@ targetEntityType: node
 bundle: product
 mode: default
 content:
-  body:
-    type: text_default
-    label: visually_hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_product_brand:
-    type: list_default
+    type: entity_reference_rss_category
     label: inline
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_product_color:
     type: list_default
     label: inline
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 5
+    region: content
+  field_product_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_product_image:
     type: entity_reference_entity_view
@@ -58,7 +59,7 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 9
+    weight: 10
     region: content
   field_product_image_more:
     type: entity_reference_entity_view
@@ -67,14 +68,14 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 11
     region: content
   field_product_material:
     type: list_default
     label: inline
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_product_model:
     type: string
@@ -82,7 +83,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_product_price_original:
     type: number_decimal
@@ -93,7 +94,7 @@ content:
       scale: 2
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 11
+    weight: 12
     region: content
   field_product_price_sale:
     type: number_decimal
@@ -104,7 +105,7 @@ content:
       scale: 2
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 12
+    weight: 13
     region: content
   field_product_rating:
     type: string
@@ -112,7 +113,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_product_review:
     type: comment_default
@@ -121,7 +122,7 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 17
+    weight: 16
     region: content
   field_product_sku:
     type: string
@@ -129,7 +130,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_product_tags:
     type: entity_reference_label
@@ -137,7 +138,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 14
+    weight: 15
     region: content
   field_product_type:
     type: entity_reference_label
@@ -145,7 +146,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 13
+    weight: 14
     region: content
   field_product_weight:
     type: number_decimal
@@ -156,7 +157,7 @@ content:
       scale: 2
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
   links:
     settings: {  }

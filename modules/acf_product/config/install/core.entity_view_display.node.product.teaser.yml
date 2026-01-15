@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.product.body
     - field.field.node.product.field_product_brand
     - field.field.node.product.field_product_color
+    - field.field.node.product.field_product_description
     - field.field.node.product.field_product_image
     - field.field.node.product.field_product_image_more
     - field.field.node.product.field_product_material
@@ -21,20 +21,12 @@ dependencies:
     - field.field.node.product.field_product_weight
     - node.type.product
   module:
-    - text
     - user
 id: node.product.teaser
 targetEntityType: node
 bundle: product
 mode: teaser
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_product_image:
     type: entity_reference_entity_view
     label: hidden
@@ -74,6 +66,7 @@ content:
 hidden:
   field_product_brand: true
   field_product_color: true
+  field_product_description: true
   field_product_image_more: true
   field_product_material: true
   field_product_model: true
