@@ -4,7 +4,7 @@ dependencies:
   config:
     - field.storage.node.field_product_tags
     - node.type.product
-    - taxonomy.vocabulary.tags
+    - taxonomy.vocabulary.product_tags
 id: node.product.field_product_tags
 field_name: field_product_tags
 entity_type: node
@@ -19,7 +19,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      tags: tags
+      product_tags: product_tags
     sort:
       field: name
       direction: asc

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Product tags'
+vid: product_tags
+description: null
+weight: 0
+new_revision: false
